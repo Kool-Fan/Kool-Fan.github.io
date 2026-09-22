@@ -34,6 +34,32 @@
     return node;
   }
 
+  function renderVideo(video, title) {
+    var figure = el("figure", "figure video-figure");
+    var player = el("video", "video-player");
+    player.controls = true;
+    player.preload = "metadata";
+    player.playsInline = true;
+    player.setAttribute("aria-label", title + " 演示视频");
+    if (video.poster) {
+      player.poster = video.poster;
+    }
+    var source = el("source");
+    source.src = video.src;
+    source.type = "video/mp4";
+    player.appendChild(source);
+    var fallback = el("p", "notice", "你的浏览器不支持内嵌视频，可以 ");
+    var download = el("a", null, "下载后观看");
+    download.href = video.src;
+    fallback.appendChild(download);
+    player.appendChild(fallback);
+    figure.appendChild(player);
+    if (video.caption) {
+      figure.appendChild(el("figcaption", null, video.caption));
+    }
+    return figure;
+  }
+
   var container = document.getElementById("project-detail");
   var wrap = container ? container.querySelector(".wrap") : null;
   if (!wrap) {
@@ -111,10 +137,14 @@
     wrap.appendChild(actions);
   }
 
-  var cover = el("img", "detail-cover");
-  cover.src = project.cover || "assets/img/project-1.svg";
-  cover.alt = project.title + " 封面";
-  wrap.appendChild(cover);
+  if (project.video && project.video.src) {
+    wrap.appendChild(renderVideo(project.video, project.title));
+  } else {
+    var cover = el("img", "detail-cover");
+    cover.src = project.cover || "assets/img/project-1.svg";
+    cover.alt = project.title + " 封面";
+    wrap.appendChild(cover);
+  }
 
   (project.sections || []).forEach(function (section) {
     wrap.appendChild(el("h2", "detail-section-title", section.title));

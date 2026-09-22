@@ -52,6 +52,10 @@
     img.width = 1200;
     img.height = 750;
     coverLink.appendChild(img);
+    if (project.video && project.video.src) {
+      coverLink.appendChild(el("span", "play-badge", "▶"));
+      coverLink.setAttribute("aria-label", "查看项目并播放演示视频：" + project.title);
+    }
     card.appendChild(coverLink);
 
     var body = el("div", "project-body");

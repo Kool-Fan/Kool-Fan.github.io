@@ -417,9 +417,29 @@ h3 {
 
 .project-cover {
   display: block;
+  position: relative;
   aspect-ratio: 16 / 10;
   background: var(--surface-2);
   border-bottom: 1px solid var(--border);
+}
+
+.play-badge {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  padding-left: 4px;
+  font-size: 18px;
+  color: #ffffff;
+  background: rgba(11, 15, 20, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  backdrop-filter: blur(4px);
+  pointer-events: none;
 }
 
 .project-cover img {
@@ -739,6 +759,28 @@ kbd {
   font-size: 13px;
   color: var(--muted);
   text-align: center;
+}
+
+/* ---------- 演示视频 ---------- */
+
+.video-figure {
+  margin: 30px 0 8px;
+}
+
+.video-player {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #000000;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.video-player .notice {
+  margin: 0;
+  padding: 16px;
+  border: 0;
+  background: transparent;
 }
 
 .detail-foot {
