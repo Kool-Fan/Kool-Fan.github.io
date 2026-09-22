@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="项目封面占位图：Web 应用界面">
+  <defs>
+    <linearGradient id="p2bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101826"/>
+      <stop offset="1" stop-color="#0b0f14"/>
+    </linearGradient>
+    <radialGradient id="p2glow" cx="0.15" cy="0.9" r="0.8">
+      <stop offset="0" stop-color="#60a5fa" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#p2bg)"/>
+  <rect width="1200" height="750" fill="url(#p2glow)"/>
+  <g transform="translate(96 150)">
+    <rect width="620" height="450" rx="18" fill="#121a23" stroke="#1f2b38" stroke-width="2"/>
+    <rect width="620" height="46" rx="18" fill="#17212c"/>
+    <g fill="#2dd4bf"><circle cx="28" cy="23" r="6"/></g>
+    <g fill="#60a5fa"><circle cx="50" cy="23" r="6"/></g>
+    <g fill="#1f2b38"><circle cx="72" cy="23" r="6"/></g>
+    <rect x="28" y="76" width="180" height="14" rx="7" fill="#2dd4bf" opacity="0.8"/>
+    <rect x="28" y="106" width="300" height="10" rx="5" fill="#1f2b38"/>
+    <g fill="#17212c" stroke="#1f2b38" stroke-width="1.5">
+      <rect x="28" y="150" width="176" height="120" rx="12"/>
+      <rect x="222" y="150" width="176" height="120" rx="12"/>
+      <rect x="416" y="150" width="176" height="120" rx="12"/>
+    </g>
+    <g fill="#60a5fa" opacity="0.85">
+      <rect x="46" y="170" width="90" height="42" rx="8"/>
+      <rect x="240" y="170" width="90" height="42" rx="8"/>
+      <rect x="434" y="170" width="90" height="42" rx="8"/>
+    </g>
+    <g fill="#1f2b38">
+      <rect x="46" y="226" width="120" height="9" rx="4.5"/>
+      <rect x="240" y="226" width="120" height="9" rx="4.5"/>
+      <rect x="434" y="226" width="120" height="9" rx="4.5"/>
+      <rect x="28" y="304" width="564" height="10" rx="5"/>
+      <rect x="28" y="334" width="470" height="10" rx="5"/>
+      <rect x="28" y="364" width="520" height="10" rx="5"/>
+      <rect x="28" y="394" width="360" height="10" rx="5"/>
+    </g>
+  </g>
+  <g font-family="ui-monospace, Consolas, monospace">
+    <text x="780" y="330" font-size="42" font-weight="700" letter-spacing="6" fill="#e6edf3">PROJECT 02</text>
+    <text x="780" y="382" font-size="24" fill="#8b98a5">替换成你的项目封面截图</text>
+  </g>
+  <g fill="#1f2b38">
+    <rect x="780" y="430" width="300" height="9" rx="4.5"/>
+    <rect x="780" y="458" width="220" height="9" rx="4.5"/>
+    <rect x="780" y="486" width="260" height="9" rx="4.5"/>
+  </g>
+</svg>

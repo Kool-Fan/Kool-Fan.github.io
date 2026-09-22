@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- TODO 1/4：把这里的姓名、方向、描述换成你自己的 -->
+  <title>你的名字 · 后端开发作品集</title>
+  <meta name="description" content="你的名字的个人作品集：后端开发、分布式系统与性能优化方向的项目与技术复盘。">
+  <meta name="author" content="你的名字">
+
+  <!-- 社交平台分享卡片 -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="你的名字 · 后端开发作品集">
+  <meta property="og:description" content="后端开发、分布式系统与性能优化方向的项目与技术复盘。">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>你的名字</span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href="#projects">项目</a>
+        <a href="#about">关于</a>
+        <a href="#skills">技能</a>
+        <a href="#experience">经历</a>
+        <a class="nav-cta" href="assets/resume/resume.pdf" target="_blank" rel="noopener">简历 PDF</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换配色">
+          <span class="theme-icon" aria-hidden="true">◐</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ 首屏：三十秒内让人知道你是谁 ============ -->
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-text">
+          <p class="hero-kicker">你好，我是</p>
+          <h1>你的名字</h1>
+          <p class="hero-tagline">后端开发 · 分布式系统 · 性能优化</p>
+          <p class="hero-desc">
+            计算机科学与技术专业 2026 届，专注高并发服务端开发。
+            喜欢把模糊的问题拆成可验证的技术方案，并用数据说明它到底好在哪里。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">查看项目</a>
+            <a class="btn" href="https://github.com/Kool-Fan" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="mailto:bihceuxj@163.com">发邮件</a>
+          </div>
+          <ul class="chips" aria-label="技术栈">
+            <li>Go</li>
+            <li>Java</li>
+            <li>Python</li>
+            <li>MySQL</li>
+            <li>Redis</li>
+            <li>Docker</li>
+            <li>Kubernetes</li>
+          </ul>
+        </div>
+        <img class="avatar" src="assets/img/avatar.svg" alt="个人头像" width="200" height="200">
+      </div>
+    </section>
+
+    <!-- ============ 精选项目：内容来自 data/projects.js ============ -->
+    <section id="projects" class="section">
+      <div class="wrap">
+        <header class="section-head">
+          <h2>精选项目</h2>
+          <p class="section-sub">每个项目都写了背景、技术选型、遇到的难点和最终结果，点进去可以看到完整复盘。</p>
+        </header>
+
+        <div id="project-grid" class="grid"></div>
+
+        <noscript>
+          <p class="notice">
+            项目列表需要 JavaScript 才能渲染。请直接查看
+            <a href="https://github.com/Kool-Fan">GitHub 仓库</a>。
+          </p>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- ============ 关于 ============ -->
+    <section id="about" class="section section-alt">
+      <div class="wrap narrow">
+        <header class="section-head">
+          <h2>关于我</h2>
+        </header>
+        <div class="prose">
+          <p>
+            <!-- TODO 2/4：两到三段就够，写"你关心什么技术问题"，不要写"我热爱编程、性格开朗" -->
+            我主要做服务端开发，比较在意两件事：接口在高并发下的稳定性，以及代码的可维护性。
+            在课程项目里做过从零实现的 RPC 框架和缓存中间件，也在实习中参与过线上接口的性能优化。
+          </p>
+          <p>
+            目前的兴趣方向是分布式系统与可观测性，正在读《数据密集型应用系统设计》，
+            也在维护一个记录踩坑的技术笔记仓库。
+          </p>
+          <p>
+            如果你觉得我的项目经历和你们的技术栈匹配，欢迎随时邮件联系我。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 技能 ============ -->
+    <section id="skills" class="section">
+      <div class="wrap">
+        <header class="section-head">
+          <h2>技能</h2>
+          <p class="section-sub">只写能在项目里对应上的能力，面试官会照着这里提问。</p>
+        </header>
+
+        <div class="grid grid-3">
+          <article class="card skill-card">
+            <h3>编程语言</h3>
+            <ul class="skill-list">
+              <li>Go：熟悉 goroutine、channel、GC 机制</li>
+              <li>Java：熟悉 JVM 内存模型与并发包</li>
+              <li>Python：脚本、数据处理</li>
+            </ul>
+          </article>
+          <article class="card skill-card">
+            <h3>后端与中间件</h3>
+            <ul class="skill-list">
+              <li>MySQL：索引优化、事务隔离级别</li>
+              <li>Redis：缓存穿透、雪崩、分布式锁</li>
+              <li>消息队列：Kafka 基础使用</li>
+            </ul>
+          </article>
+          <article class="card skill-card">
+            <h3>工程与运维</h3>
+            <ul class="skill-list">
+              <li>Docker / Kubernetes 基础部署</li>
+              <li>Linux、Nginx、Git 工作流</li>
+              <li>Prometheus + Grafana 监控</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 经历 ============ -->
+    <section id="experience" class="section section-alt">
+      <div class="wrap narrow">
+        <header class="section-head">
+          <h2>经历</h2>
+        </header>
+
+        <ol class="timeline">
+          <li>
+            <div class="timeline-head">
+              <h3>后端开发实习生 · 某科技有限公司</h3>
+              <span class="timeline-date">2025.07 – 2025.09</span>
+            </div>
+            <ul class="timeline-body">
+              <li>负责订单查询接口的重构，引入二级缓存后接口 P99 从 480ms 降到 120ms。</li>
+              <li>补齐核心链路单元测试，覆盖率从 32% 提升到 76%。</li>
+            </ul>
+          </li>
+          <li>
+            <div class="timeline-head">
+              <h3>全国大学生服务外包创新创业大赛 · 省级二等奖</h3>
+              <span class="timeline-date">2024</span>
+            </div>
+            <ul class="timeline-body">
+              <li>担任后端负责人，完成 12 个接口的设计与实现。</li>
+            </ul>
+          </li>
+          <li>
+            <div class="timeline-head">
+              <h3>开源贡献 · 某中间件项目</h3>
+              <span class="timeline-date">2025</span>
+            </div>
+            <ul class="timeline-body">
+              <li>修复文档示例中的并发错误，PR 已合并。</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 联系 ============ -->
+    <section id="contact" class="section">
+      <div class="wrap narrow contact">
+        <h2>联系我</h2>
+        <p class="contact-sub">简历 PDF、代码和项目 demo 都可以从下面拿到。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="mailto:bihceuxj@163.com">bihceuxj@163.com</a>
+          <a class="btn" href="https://github.com/Kool-Fan" target="_blank" rel="noopener">github.com/Kool-Fan</a>
+          <a class="btn" href="assets/resume/resume.pdf" target="_blank" rel="noopener">下载简历 PDF</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year">2026</span> 你的名字 · 用原生 HTML / CSS 手写，托管在 GitHub Pages</p>
+      <p class="footer-hint">按 <kbd>Ctrl</kbd> + <kbd>P</kbd> 可打印为 PDF</p>
+    </div>
+  </footer>
+
+  <script src="data/projects.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

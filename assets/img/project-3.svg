@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="项目封面占位图：代码与提交历史">
+  <defs>
+    <linearGradient id="p3bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#121326"/>
+      <stop offset="1" stop-color="#0b0f14"/>
+    </linearGradient>
+    <radialGradient id="p3glow" cx="0.7" cy="0.8" r="0.8">
+      <stop offset="0" stop-color="#818cf8" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#818cf8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#p3bg)"/>
+  <rect width="1200" height="750" fill="url(#p3glow)"/>
+  <g stroke="#818cf8" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M250 180 V560"/>
+    <path d="M250 260 C340 260 340 380 440 380 H560"/>
+    <path d="M250 470 C360 470 380 560 500 560 H620"/>
+  </g>
+  <g fill="#121a23" stroke="#818cf8" stroke-width="4">
+    <circle cx="250" cy="180" r="16"/>
+    <circle cx="250" cy="260" r="16"/>
+    <circle cx="250" cy="470" r="16"/>
+    <circle cx="250" cy="560" r="16"/>
+  </g>
+  <g fill="#2dd4bf">
+    <circle cx="576" cy="380" r="14"/>
+    <circle cx="636" cy="560" r="14"/>
+  </g>
+  <g fill="#1f2b38">
+    <rect x="640" y="176" width="200" height="10" rx="5"/>
+    <rect x="640" y="256" width="150" height="10" rx="5"/>
+    <rect x="640" y="466" width="180" height="10" rx="5"/>
+  </g>
+  <g font-family="ui-monospace, Consolas, monospace">
+    <text x="88" y="640" font-size="42" font-weight="700" letter-spacing="6" fill="#e6edf3">PROJECT 03</text>
+    <text x="88" y="692" font-size="24" fill="#8b98a5">替换成你的项目封面截图</text>
+  </g>
+</svg>

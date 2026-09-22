@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>页面不存在 · 你的名字</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <main class="section">
+    <div class="wrap narrow contact">
+      <h1 class="hero-title-404">404</h1>
+      <p class="contact-sub">这个页面不存在，可能是链接过期了。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="./">回到首页</a>
+        <a class="btn" href="./#projects">查看项目</a>
+      </div>
+    </div>
+  </main>
+  <script>
+    document.documentElement.dataset.theme =
+      localStorage.getItem("theme") ||
+      (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  </script>
+</body>
+</html>

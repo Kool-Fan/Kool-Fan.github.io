@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="项目封面占位图：分布式服务拓扑">
+  <defs>
+    <linearGradient id="p1bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f1a20"/>
+      <stop offset="1" stop-color="#0b0f14"/>
+    </linearGradient>
+    <radialGradient id="p1glow" cx="0.8" cy="0.2" r="0.8">
+      <stop offset="0" stop-color="#2dd4bf" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="p1line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#60a5fa"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#p1bg)"/>
+  <rect width="1200" height="750" fill="url(#p1glow)"/>
+  <g stroke="#17222c" stroke-width="1">
+    <path d="M0 150H1200M0 300H1200M0 450H1200M0 600H1200M150 0V750M300 0V750M450 0V750M600 0V750M750 0V750M900 0V750M1050 0V750"/>
+  </g>
+  <g fill="none" stroke="url(#p1line)" stroke-width="3" stroke-opacity="0.85">
+    <circle cx="760" cy="375" r="96"/>
+    <circle cx="760" cy="375" r="170" stroke-opacity="0.5"/>
+    <circle cx="760" cy="375" r="244" stroke-opacity="0.28"/>
+  </g>
+  <g fill="#2dd4bf">
+    <circle cx="760" cy="279" r="11"/>
+    <circle cx="884" cy="430" r="9"/>
+    <circle cx="636" cy="430" r="9"/>
+    <circle cx="760" cy="205" r="7"/>
+    <circle cx="962" cy="375" r="7"/>
+  </g>
+  <g font-family="ui-monospace, Consolas, monospace" fill="#e6edf3">
+    <text x="88" y="330" font-size="42" font-weight="700" letter-spacing="6">PROJECT 01</text>
+    <text x="88" y="382" font-size="24" fill="#8b98a5">替换成你的项目封面截图</text>
+  </g>
+  <g fill="#1f2b38">
+    <rect x="88" y="430" width="300" height="9" rx="4.5"/>
+    <rect x="88" y="458" width="220" height="9" rx="4.5"/>
+    <rect x="88" y="486" width="260" height="9" rx="4.5"/>
+  </g>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="抽象代码头像">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#12212b"/>
+      <stop offset="1" stop-color="#0b0f14"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#60a5fa"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.25" cy="0.15" r="0.9">
+      <stop offset="0" stop-color="#2dd4bf" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <rect width="400" height="400" fill="url(#glow)"/>
+  <g stroke="#1f2b38" stroke-width="1">
+    <path d="M0 100H400M0 200H400M0 300H400M100 0V400M200 0V400M300 0V400"/>
+  </g>
+  <g fill="none" stroke="url(#accent)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M162 138 L110 200 L162 262"/>
+    <path d="M238 138 L290 200 L238 262"/>
+  </g>
+  <circle cx="200" cy="200" r="132" fill="none" stroke="#2dd4bf" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="6 10"/>
+</svg>
