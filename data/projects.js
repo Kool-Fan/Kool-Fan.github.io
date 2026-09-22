@@ -36,7 +36,7 @@ window.PROJECTS = [
     video: {
       src: "assets/video/ros-navigation-demo.mp4",
       poster: "assets/img/ros-car-poster.jpg",
-      caption: "实机演示（5 分 46 秒，1080p）：建议先看这段，再往下读技术细节。"
+      caption: "实机演示，5 分 46 秒（1080p）"
     },
     summary: "在沙盘上搭一套「大模型当大脑、小车当身体」的导航系统：大模型读地图规划路线，小车自主导航到兴趣点，再用 ArUco 完成厘米级对准。",
     metrics: [
@@ -148,14 +148,14 @@ window.PROJECTS = [
         imageCaption: "三维绿量的处理流程（简化示意）"
       },
       {
-        title: "两段经历怎么衔接",
+        title: "项目脉络",
         body: [
           "大创阶段担任技术负责，承担模型训练、代码编写和 GIS 提取等核心技术环节的实现，最终完成三维绿量反演技术，项目结项评级良好。",
           "暑期社会实践阶段担任队长，带全队走完前期调研、中期开发、后期宣发与结项答辩的完整流程，把上面这套算法做成可以访问的网站，项目获得院级三等奖。所以这两段经历不是两件事，而是同一个成果的算法端和呈现端。"
         ]
       },
       {
-        title: "网站包含什么",
+        title: "网站内容",
         body: [
           "网站共五个页面。首页介绍项目背景；公园生态指数页做海淀区公园的指标对比；三维绿量页是核心，用「以圆明园为例的三维绿量静态数据全景展示」的结构，讲清三维绿量的定义与价值，并给出核心数据总览、绿量空间分布地图和主要贡献植物的绿量数据；知识问答页把生态与植物知识做成问答形式；联系页面放小组介绍与反馈入口。",
           "内容上把偏专业的指标落到具体场景：为什么矮草坪和高大乔木不能算作同一种绿化、哪些植物对绿量贡献最大、绿量在园区里是怎么分布的。"
@@ -180,12 +180,6 @@ window.PROJECTS = [
           "这也是我第一次把算法结果做成面向非专业读者的产品：把绿量指标翻译成人能理解的对比和地图，比多算一个精度指标更能说明这个研究有什么用。"
         ]
       },
-      {
-        title: "可补充的内容",
-        body: [
-          "团队的规模与分工、网站的访问量、遥感数据的来源与年份、生态指数具体由哪些指标合成、以及三维绿量页里那张分布图的生成方式，都可以补进这一页。"
-        ]
-      }
     ]
   },
 
@@ -206,7 +200,7 @@ window.PROJECTS = [
       { src: "assets/img/yolo/val-labels.jpg", caption: "验证集标注（真值）" },
       { src: "assets/img/yolo/val-pred.jpg", caption: "同一批图像的模型预测结果" }
     ],
-    galleryNote: "以上曲线、混淆矩阵与预测对比图均由 YOLOv5 训练过程自动生成。",
+    galleryNote: "曲线、混淆矩阵与预测对比图均由 YOLOv5 训练过程自动生成。",
     summary: "从 BDD100K 里挑出道路图像手工标注，用 YOLOv5s 做迁移学习，训练交通指示牌、车辆与信号灯三类目标检测器，并借助混淆矩阵与 F1 曲线定位问题。",
     metrics: [
       { label: "最佳 mAP@0.5", value: "0.67" },
@@ -288,14 +282,14 @@ window.PROJECTS = [
     video: {
       src: "assets/video/ai-camera-demo.mp4",
       poster: "assets/img/ai-camera-poster.jpg",
-      caption: "实机演示（2 分 19 秒，1080p）：建议先看这段，再往下读架构与踩坑记录。"
+      caption: "实机演示，2 分 19 秒（1080p）"
     },
     gallery: [
       { src: "assets/img/ai-camera/shot-1.jpg" },
       { src: "assets/img/ai-camera/shot-2.jpg" },
       { src: "assets/img/ai-camera/shot-3.jpg" }
     ],
-    galleryNote: "以上画面截取自上面的演示视频。",
+    galleryNote: "画面截取自演示视频。",
     summary: "拍一张照片，App 在本地判断画面里的人脸、座椅与植被并给出结构化评价，用户确认后把图片和评价同步到局域网内的服务端保存。",
     metrics: [
       { label: "端侧模型", value: "EfficientDet-Lite0" },
