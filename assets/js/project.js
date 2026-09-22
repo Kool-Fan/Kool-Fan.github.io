@@ -60,6 +60,31 @@
     return figure;
   }
 
+  function renderGallery(project) {
+    var block = el("section", "gallery-block");
+    block.appendChild(
+      el("h2", "detail-section-title", project.galleryTitle || "应用界面")
+    );
+    var grid = el("div", "gallery-grid");
+    project.gallery.forEach(function (shot, index) {
+      var item = el("figure", "gallery-item");
+      var image = el("img");
+      image.src = shot.src;
+      image.alt = shot.caption || project.title + " 界面截图 " + (index + 1);
+      image.loading = "lazy";
+      item.appendChild(image);
+      if (shot.caption) {
+        item.appendChild(el("figcaption", null, shot.caption));
+      }
+      grid.appendChild(item);
+    });
+    block.appendChild(grid);
+    if (project.galleryNote) {
+      block.appendChild(el("p", "gallery-note", project.galleryNote));
+    }
+    return block;
+  }
+
   var container = document.getElementById("project-detail");
   var wrap = container ? container.querySelector(".wrap") : null;
   if (!wrap) {
@@ -150,6 +175,10 @@
     cover.src = project.cover || "assets/img/project-1.svg";
     cover.alt = project.title + " 封面";
     wrap.appendChild(cover);
+  }
+
+  if (project.gallery && project.gallery.length) {
+    wrap.appendChild(renderGallery(project));
   }
 
   (project.sections || []).forEach(function (section) {

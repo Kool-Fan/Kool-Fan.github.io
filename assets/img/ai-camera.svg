@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="项目封面：AI 相机，实时识别物体并上传到服务端">
+  <defs>
+    <linearGradient id="acbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1a24"/>
+      <stop offset="1" stop-color="#0b0f14"/>
+    </linearGradient>
+    <radialGradient id="acglow" cx="0.2" cy="0.25" r="0.8">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="acglow2" cx="0.85" cy="0.8" r="0.7">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="acline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <pattern id="acgrid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" fill="none" stroke="#12252f" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#acbg)"/>
+  <rect width="1200" height="750" fill="url(#acglow)"/>
+  <rect width="1200" height="750" fill="url(#acglow2)"/>
+  <rect width="1200" height="750" fill="url(#acgrid)"/>
+
+  <text x="88" y="128" font-family="ui-monospace, Consolas, monospace" font-size="42" font-weight="700" letter-spacing="6" fill="#e6edf3">PROJECT 03</text>
+  <text x="88" y="180" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="26" fill="#8b98a5">AI 相机 · 端侧识别 + 服务端同步</text>
+
+  <!-- 手机 -->
+  <g transform="translate(120 240)">
+    <rect width="250" height="470" rx="28" fill="#101c25" stroke="#22d3ee" stroke-width="3"/>
+    <rect x="16" y="16" width="218" height="438" rx="18" fill="#0b0f14" stroke="#1f2b38" stroke-width="2"/>
+    <rect x="86" y="28" width="78" height="10" rx="5" fill="#1f2b38"/>
+
+    <!-- 取景画面 -->
+    <g fill="none" stroke-width="3">
+      <rect x="36" y="76" width="86" height="104" rx="6" stroke="#22d3ee"/>
+      <rect x="140" y="176" width="74" height="88" rx="6" stroke="#fbbf24"/>
+      <rect x="52" y="284" width="100" height="74" rx="6" stroke="#34d399"/>
+    </g>
+    <g font-family="'Microsoft YaHei', sans-serif" font-size="15">
+      <rect x="36" y="58" width="52" height="20" rx="4" fill="#22d3ee"/>
+      <text x="42" y="73" fill="#04140f">人脸</text>
+      <rect x="140" y="158" width="52" height="20" rx="4" fill="#fbbf24"/>
+      <text x="146" y="173" fill="#1a1204">座椅</text>
+      <rect x="52" y="266" width="52" height="20" rx="4" fill="#34d399"/>
+      <text x="58" y="281" fill="#04140f">植被</text>
+    </g>
+
+    <!-- 快门 -->
+    <circle cx="125" cy="404" r="26" fill="none" stroke="#22d3ee" stroke-width="3"/>
+    <circle cx="125" cy="404" r="16" fill="#22d3ee"/>
+  </g>
+
+  <!-- 上传箭头 -->
+  <g stroke="url(#acline)" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M400 470 H560" stroke-dasharray="12 10"/>
+  </g>
+  <path d="M560 470 l-16 -10 v20 z" fill="#a78bfa"/>
+  <text x="480" y="446" font-family="ui-monospace, Consolas, monospace" font-size="17" fill="#8b98a5" text-anchor="middle">Retrofit + Multipart</text>
+
+  <!-- 服务端 -->
+  <g transform="translate(596 250)">
+    <rect width="490" height="450" rx="20" fill="#101c25" stroke="#2b2547" stroke-width="2"/>
+    <rect width="490" height="52" rx="20" fill="#171430"/>
+    <g fill="#a78bfa"><circle cx="28" cy="26" r="6"/></g>
+    <g fill="#22d3ee"><circle cx="50" cy="26" r="6"/></g>
+    <g fill="#34d399"><circle cx="72" cy="26" r="6"/></g>
+    <text x="300" y="33" font-family="ui-monospace, Consolas, monospace" font-size="17" fill="#8b98a5" text-anchor="middle">Flask + TFLite 服务端</text>
+
+    <g fill="#121a23" stroke="#1f2b38" stroke-width="2">
+      <rect x="28" y="78" width="434" height="72" rx="10"/>
+      <rect x="28" y="166" width="434" height="72" rx="10"/>
+      <rect x="28" y="254" width="434" height="72" rx="10"/>
+      <rect x="28" y="342" width="434" height="72" rx="10"/>
+    </g>
+    <g fill="#22d3ee" opacity="0.85">
+      <rect x="46" y="94" width="60" height="40" rx="6"/>
+      <rect x="46" y="182" width="60" height="40" rx="6"/>
+      <rect x="46" y="270" width="60" height="40" rx="6"/>
+      <rect x="46" y="358" width="60" height="40" rx="6"/>
+    </g>
+    <g fill="#1f2b38">
+      <rect x="122" y="102" width="200" height="9" rx="4.5"/>
+      <rect x="122" y="120" width="120" height="9" rx="4.5"/>
+      <rect x="122" y="190" width="230" height="9" rx="4.5"/>
+      <rect x="122" y="208" width="140" height="9" rx="4.5"/>
+      <rect x="122" y="278" width="180" height="9" rx="4.5"/>
+      <rect x="122" y="296" width="150" height="9" rx="4.5"/>
+      <rect x="122" y="366" width="210" height="9" rx="4.5"/>
+      <rect x="122" y="384" width="110" height="9" rx="4.5"/>
+    </g>
+  </g>
+</svg>

@@ -21,7 +21,7 @@
   <rect width="1200" height="750" fill="url(#p2glow)"/>
   <rect width="1200" height="750" fill="url(#p2grid)"/>
 
-  <text x="88" y="128" font-family="ui-monospace, Consolas, monospace" font-size="42" font-weight="700" letter-spacing="6" fill="#e6edf3">PROJECT 02</text>
+  <text x="88" y="128" font-family="ui-monospace, Consolas, monospace" font-size="42" font-weight="700" letter-spacing="6" fill="#e6edf3">PROJECT 01</text>
   <text x="88" y="180" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="26" fill="#8b98a5">ROS2 无人车 · 定位 / 建图 / 导航</text>
 
   <path d="M700 420 L520 250 L880 250 Z" fill="url(#p2cone)"/>
