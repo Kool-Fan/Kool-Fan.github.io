@@ -4,15 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- TODO 1/4：把这里的姓名、方向、描述换成你自己的 -->
-  <title>你的名字 · 后端开发作品集</title>
-  <meta name="description" content="你的名字的个人作品集：后端开发、分布式系统与性能优化方向的项目与技术复盘。">
-  <meta name="author" content="你的名字">
+  <title>董博俊 · 物联网工程 / 嵌入式与机器人</title>
+  <meta name="description" content="董博俊的个人作品集：物联网工程专业，方向为嵌入式开发、ROS2 机器人与遥感智能感知，包含项目技术复盘与专利成果。">
+  <meta name="author" content="董博俊">
 
-  <!-- 社交平台分享卡片 -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="你的名字 · 后端开发作品集">
-  <meta property="og:description" content="后端开发、分布式系统与性能优化方向的项目与技术复盘。">
+  <meta property="og:title" content="董博俊 · 物联网工程 / 嵌入式与机器人">
+  <meta property="og:description" content="嵌入式开发、ROS2 机器人与遥感智能感知方向的项目复盘与专利成果。">
   <meta name="twitter:card" content="summary">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -25,12 +23,13 @@
     <div class="wrap header-inner">
       <a class="brand" href="./">
         <span class="brand-mark" aria-hidden="true"></span>
-        <span>你的名字</span>
+        <span>董博俊</span>
       </a>
       <nav class="nav" aria-label="主导航">
         <a href="#projects">项目</a>
         <a href="#about">关于</a>
         <a href="#skills">技能</a>
+        <a href="#patents">专利</a>
         <a href="#experience">经历</a>
         <a class="nav-cta" href="assets/resume/resume.pdf" target="_blank" rel="noopener">简历 PDF</a>
         <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换配色">
@@ -41,30 +40,32 @@
   </header>
 
   <main id="main">
-    <!-- ============ 首屏：三十秒内让人知道你是谁 ============ -->
+    <!-- ============ 首屏 ============ -->
     <section class="hero">
       <div class="wrap hero-inner">
         <div class="hero-text">
           <p class="hero-kicker">你好，我是</p>
-          <h1>你的名字</h1>
-          <p class="hero-tagline">后端开发 · 分布式系统 · 性能优化</p>
+          <h1>董博俊</h1>
+          <p class="hero-tagline">物联网工程 · 嵌入式与机器人 · 遥感与智能感知</p>
           <p class="hero-desc">
-            计算机科学与技术专业 2026 届，专注高并发服务端开发。
-            喜欢把模糊的问题拆成可验证的技术方案，并用数据说明它到底好在哪里。
+            北京林业大学物联网工程专业 2027 届本科生。做过城市遥感影像的植被提取与三维绿量反演，
+            正在用 ROS2 搭建无人车的定位、建图与导航链路；参与申请的 4 项电机相关专利中，已有 2 项获得授权。
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#projects">查看项目</a>
             <a class="btn" href="https://github.com/Kool-Fan" target="_blank" rel="noopener">GitHub</a>
             <a class="btn" href="mailto:bihceuxj@163.com">发邮件</a>
+            <a class="btn" href="assets/resume/resume.pdf" target="_blank" rel="noopener">下载简历</a>
           </div>
           <ul class="chips" aria-label="技术栈">
-            <li>Go</li>
-            <li>Java</li>
+            <li>C / C++</li>
             <li>Python</li>
-            <li>MySQL</li>
-            <li>Redis</li>
-            <li>Docker</li>
-            <li>Kubernetes</li>
+            <li>Java</li>
+            <li>ROS2</li>
+            <li>嵌入式</li>
+            <li>Linux</li>
+            <li>SQL</li>
+            <li>Verilog</li>
           </ul>
         </div>
         <img class="avatar" src="assets/img/avatar.svg" alt="个人头像" width="200" height="200">
@@ -76,7 +77,7 @@
       <div class="wrap">
         <header class="section-head">
           <h2>精选项目</h2>
-          <p class="section-sub">每个项目都写了背景、技术选型、遇到的难点和最终结果，点进去可以看到完整复盘。</p>
+          <p class="section-sub">每个项目都写了背景、我负责的部分和技术路线，点进去可以看到完整说明。</p>
         </header>
 
         <div id="project-grid" class="grid"></div>
@@ -84,7 +85,7 @@
         <noscript>
           <p class="notice">
             项目列表需要 JavaScript 才能渲染。请直接查看
-            <a href="https://github.com/Kool-Fan">GitHub 仓库</a>。
+            <a href="https://github.com/Kool-Fan">GitHub</a>。
           </p>
         </noscript>
       </div>
@@ -98,18 +99,37 @@
         </header>
         <div class="prose">
           <p>
-            <!-- TODO 2/4：两到三段就够，写"你关心什么技术问题"，不要写"我热爱编程、性格开朗" -->
-            我主要做服务端开发，比较在意两件事：接口在高并发下的稳定性，以及代码的可维护性。
-            在课程项目里做过从零实现的 RPC 框架和缓存中间件，也在实习中参与过线上接口的性能优化。
+            我在北京林业大学读物联网工程，课程覆盖嵌入式系统、操作系统、计算机网络、无线网络和数字标签与射频识别，
+            学分绩 82.54/100。这个专业的特点是要同时碰硬件、网络和软件，所以我的项目基本都跨越了不止一层。
           </p>
           <p>
-            目前的兴趣方向是分布式系统与可观测性，正在读《数据密集型应用系统设计》，
-            也在维护一个记录踩坑的技术笔记仓库。
+            做过的事大多围绕同一件事：把物理世界的数据变成能用的结果。大创项目里把城市遥感影像处理成三维绿量指标，
+            专业实践里给无人车搭建定位与导航链路，实习时写文件转换程序把繁琐的重复操作自动化。
           </p>
           <p>
-            如果你觉得我的项目经历和你们的技术栈匹配，欢迎随时邮件联系我。
+            课外我是学院排球队队长，任期内球队达到 53 人的最大规模；也做过暑期社会实践的队长，
+            带团队走完调研、开发、宣发到结项答辩的完整流程，拿了院级三等奖。
           </p>
         </div>
+
+        <dl class="facts">
+          <div>
+            <dt>教育经历</dt>
+            <dd>北京林业大学 · 物联网工程 · 本科（2023.09 – 2027.06）</dd>
+          </div>
+          <div>
+            <dt>在校成绩</dt>
+            <dd>学分绩 82.54/100，专业排名 37.5%</dd>
+          </div>
+          <div>
+            <dt>主修课程</dt>
+            <dd>嵌入式系统、数据结构、操作系统、计算机组成原理、计算机网络、无线网络、数字标签与射频识别</dd>
+          </div>
+          <div>
+            <dt>荣誉奖项</dt>
+            <dd>2025 大学生创新创业训练计划（校级）良好评级 · 暑期社会团体实践院级三等奖</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
@@ -125,33 +145,65 @@
           <article class="card skill-card">
             <h3>编程语言</h3>
             <ul class="skill-list">
-              <li>Go：熟悉 goroutine、channel、GC 机制</li>
-              <li>Java：熟悉 JVM 内存模型与并发包</li>
-              <li>Python：脚本、数据处理</li>
+              <li>C / C++：嵌入式与算法实现</li>
+              <li>Python：数据处理与模型训练</li>
+              <li>Java、Web、SQL：后端与数据存储</li>
+              <li>Verilog：数字逻辑设计</li>
             </ul>
           </article>
           <article class="card skill-card">
-            <h3>后端与中间件</h3>
+            <h3>开发方向</h3>
             <ul class="skill-list">
-              <li>MySQL：索引优化、事务隔离级别</li>
-              <li>Redis：缓存穿透、雪崩、分布式锁</li>
-              <li>消息队列：Kafka 基础使用</li>
+              <li>嵌入式开发、CCS 开发环境</li>
+              <li>Linux 下的开发与调试</li>
+              <li>ROS2 机器人系统开发</li>
+              <li>Android 应用开发</li>
             </ul>
           </article>
           <article class="card skill-card">
-            <h3>工程与运维</h3>
+            <h3>模型与其他</h3>
             <ul class="skill-list">
-              <li>Docker / Kubernetes 基础部署</li>
-              <li>Linux、Nginx、Git 工作流</li>
-              <li>Prometheus + Grafana 监控</li>
+              <li>模型训练与部署</li>
+              <li>Office 办公软件、Photoshop</li>
+              <li>英语：CET-4 584 / CET-6 547</li>
+              <li>持有驾照</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- ============ 专利 ============ -->
+    <section id="patents" class="section section-alt">
+      <div class="wrap">
+        <header class="section-head">
+          <h2>专利</h2>
+          <p class="section-sub">参与申请的 4 项电机相关专利，其中 2 项实用新型已获授权。</p>
+        </header>
+
+        <div class="grid grid-3">
+          <article class="card patent-card">
+            <h3>一种双电机驱动系统</h3>
+            <p class="project-meta">实用新型专利 · 已授权 · 第 3 发明人</p>
+          </article>
+          <article class="card patent-card">
+            <h3>一种单相高频外转子飞轮发电机</h3>
+            <p class="project-meta">实用新型专利 · 已授权 · 第 2 发明人</p>
+          </article>
+          <article class="card patent-card">
+            <h3>一种电机转子及应用其的电机</h3>
+            <p class="project-meta">发明专利 · 实质审查 · 第 2 发明人</p>
+          </article>
+          <article class="card patent-card">
+            <h3>一种内转子永磁电机</h3>
+            <p class="project-meta">发明专利 · 实质审查 · 第 2 发明人</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ 经历 ============ -->
-    <section id="experience" class="section section-alt">
+    <section id="experience" class="section">
       <div class="wrap narrow">
         <header class="section-head">
           <h2>经历</h2>
@@ -160,41 +212,66 @@
         <ol class="timeline">
           <li>
             <div class="timeline-head">
-              <h3>后端开发实习生 · 某科技有限公司</h3>
-              <span class="timeline-date">2025.07 – 2025.09</span>
+              <h3>校级大创项目 · 技术负责</h3>
+              <span class="timeline-date">2025.03 – 2026.03</span>
             </div>
             <ul class="timeline-body">
-              <li>负责订单查询接口的重构，引入二级缓存后接口 P99 从 480ms 降到 120ms。</li>
-              <li>补齐核心链路单元测试，覆盖率从 32% 提升到 76%。</li>
+              <li>负责模型训练、代码编写与 GIS 提取等核心技术环节，完成三维绿量反演技术。</li>
+              <li>项目《高精度城市植被提取与三维绿量遥感反演研究》结项评级良好。</li>
             </ul>
           </li>
           <li>
             <div class="timeline-head">
-              <h3>全国大学生服务外包创新创业大赛 · 省级二等奖</h3>
-              <span class="timeline-date">2024</span>
+              <h3>专业实践项目 · 核心节点开发</h3>
+              <span class="timeline-date">2026.09 – 2026.11</span>
             </div>
             <ul class="timeline-body">
-              <li>担任后端负责人，完成 12 个接口的设计与实现。</li>
+              <li>基于大模型与 ROS2 的无人车智能导航平台，承担通信、定位、导航、建图、精准定位与前后端搭建。</li>
             </ul>
           </li>
           <li>
             <div class="timeline-head">
-              <h3>开源贡献 · 某中间件项目</h3>
-              <span class="timeline-date">2025</span>
+              <h3>北京华车时代科技有限公司 · 实习生</h3>
+              <span class="timeline-date">本科期间寒暑假</span>
             </div>
             <ul class="timeline-body">
-              <li>修复文档示例中的并发错误，PR 已合并。</li>
+              <li>开发轻量文件转换程序，完成格式解析与转换逻辑，提升文件处理与烧写效率，减少大量人工重复操作。</li>
+              <li>带领开发团队完成程序调试与实机测试，配合开展设备功能测试，复现并记录运行异常问题。</li>
             </ul>
+          </li>
+          <li>
+            <div class="timeline-head">
+              <h3>信息学院排球队 · 队长</h3>
+              <span class="timeline-date">2025.09 – 2026.06</span>
+            </div>
+            <ul class="timeline-body">
+              <li>任期内球队人数达到 53 人的最大规模，带队取得队史最好成绩。</li>
+            </ul>
+          </li>
+          <li>
+            <div class="timeline-head">
+              <h3>暑期社会团体实践 · 队长</h3>
+              <span class="timeline-date">2025.06 – 2025.09</span>
+            </div>
+            <ul class="timeline-body">
+              <li>组织前期调研、中期开发与后期宣发、结项答辩，完成圆明园绿色网站搭建，获院级三等奖。</li>
+            </ul>
+          </li>
+          <li>
+            <div class="timeline-head">
+              <h3>信息学院党建办公室策划实践部 · 干事</h3>
+              <span class="timeline-date">2023.09 – 2024.06</span>
+            </div>
           </li>
         </ol>
       </div>
     </section>
 
     <!-- ============ 联系 ============ -->
-    <section id="contact" class="section">
+    <section id="contact" class="section section-alt">
       <div class="wrap narrow contact">
         <h2>联系我</h2>
-        <p class="contact-sub">简历 PDF、代码和项目 demo 都可以从下面拿到。</p>
+        <p class="contact-sub">简历 PDF、项目说明和代码都可以从下面拿到。</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="mailto:bihceuxj@163.com">bihceuxj@163.com</a>
           <a class="btn" href="https://github.com/Kool-Fan" target="_blank" rel="noopener">github.com/Kool-Fan</a>
@@ -206,7 +283,7 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <p>© <span id="year">2026</span> 你的名字 · 用原生 HTML / CSS 手写，托管在 GitHub Pages</p>
+      <p>© <span id="year">2026</span> 董博俊 · 用原生 HTML / CSS 手写，托管在 GitHub Pages</p>
       <p class="footer-hint">按 <kbd>Ctrl</kbd> + <kbd>P</kbd> 可打印为 PDF</p>
     </div>
   </footer>

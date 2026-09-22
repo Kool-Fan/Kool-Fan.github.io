@@ -1,42 +1,61 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="项目封面占位图：分布式服务拓扑">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="项目封面：城市遥感植被提取与三维绿量反演">
   <defs>
     <linearGradient id="p1bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0f1a20"/>
+      <stop offset="0" stop-color="#0d1a16"/>
       <stop offset="1" stop-color="#0b0f14"/>
     </linearGradient>
-    <radialGradient id="p1glow" cx="0.8" cy="0.2" r="0.8">
-      <stop offset="0" stop-color="#2dd4bf" stop-opacity="0.3"/>
-      <stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/>
+    <radialGradient id="p1glow" cx="0.78" cy="0.22" r="0.75">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="p1line" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#2dd4bf"/>
-      <stop offset="1" stop-color="#60a5fa"/>
+    <linearGradient id="p1patch" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#34d399"/>
+      <stop offset="1" stop-color="#22d3ee"/>
     </linearGradient>
+    <linearGradient id="p1bar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#15803d" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0.95"/>
+    </linearGradient>
+    <pattern id="p1grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" fill="none" stroke="#132420" stroke-width="1"/>
+    </pattern>
   </defs>
+
   <rect width="1200" height="750" fill="url(#p1bg)"/>
   <rect width="1200" height="750" fill="url(#p1glow)"/>
-  <g stroke="#17222c" stroke-width="1">
-    <path d="M0 150H1200M0 300H1200M0 450H1200M0 600H1200M150 0V750M300 0V750M450 0V750M600 0V750M750 0V750M900 0V750M1050 0V750"/>
+  <rect width="1200" height="750" fill="url(#p1grid)"/>
+
+  <text x="88" y="128" font-family="ui-monospace, Consolas, monospace" font-size="42" font-weight="700" letter-spacing="6" fill="#e6edf3">PROJECT 01</text>
+  <text x="88" y="180" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="26" fill="#8b98a5">城市遥感植被提取 · 三维绿量反演</text>
+
+  <g fill="url(#p1patch)" opacity="0.5">
+    <path d="M120 470 C158 424 226 438 250 478 C274 518 236 560 186 556 C138 552 88 514 120 470 Z"/>
+    <path d="M292 512 C320 480 372 490 388 520 C404 550 374 582 338 578 C304 574 270 542 292 512 Z"/>
+    <path d="M186 596 C212 566 262 574 276 604 C290 632 260 662 226 658 C194 654 166 624 186 596 Z"/>
+    <path d="M420 440 C452 410 506 420 522 452 C538 484 504 516 466 512 C430 508 396 468 420 440 Z"/>
+    <path d="M540 560 C566 532 614 540 628 570 C642 598 612 626 578 622 C546 618 520 586 540 560 Z"/>
   </g>
-  <g fill="none" stroke="url(#p1line)" stroke-width="3" stroke-opacity="0.85">
-    <circle cx="760" cy="375" r="96"/>
-    <circle cx="760" cy="375" r="170" stroke-opacity="0.5"/>
-    <circle cx="760" cy="375" r="244" stroke-opacity="0.28"/>
+  <g fill="none" stroke="#34d399" stroke-width="2" stroke-opacity="0.55">
+    <path d="M120 470 C158 424 226 438 250 478 C274 518 236 560 186 556 C138 552 88 514 120 470 Z"/>
+    <path d="M420 440 C452 410 506 420 522 452 C538 484 504 516 466 512 C430 508 396 468 420 440 Z"/>
   </g>
-  <g fill="#2dd4bf">
-    <circle cx="760" cy="279" r="11"/>
-    <circle cx="884" cy="430" r="9"/>
-    <circle cx="636" cy="430" r="9"/>
-    <circle cx="760" cy="205" r="7"/>
-    <circle cx="962" cy="375" r="7"/>
+
+  <g stroke="#1f2b38" stroke-width="2" stroke-dasharray="8 8">
+    <path d="M700 620 H1060"/>
   </g>
-  <g font-family="ui-monospace, Consolas, monospace" fill="#e6edf3">
-    <text x="88" y="330" font-size="42" font-weight="700" letter-spacing="6">PROJECT 01</text>
-    <text x="88" y="382" font-size="24" fill="#8b98a5">替换成你的项目封面截图</text>
+  <g fill="url(#p1bar)">
+    <rect x="716" y="500" width="52" height="120" rx="6"/>
+    <rect x="788" y="440" width="52" height="180" rx="6"/>
+    <rect x="860" y="372" width="52" height="248" rx="6"/>
+    <rect x="932" y="286" width="52" height="334" rx="6"/>
+    <rect x="1004" y="352" width="52" height="268" rx="6"/>
   </g>
-  <g fill="#1f2b38">
-    <rect x="88" y="430" width="300" height="9" rx="4.5"/>
-    <rect x="88" y="458" width="220" height="9" rx="4.5"/>
-    <rect x="88" y="486" width="260" height="9" rx="4.5"/>
+  <g fill="#6ee7b7" opacity="0.9">
+    <rect x="716" y="494" width="52" height="8" rx="4"/>
+    <rect x="788" y="434" width="52" height="8" rx="4"/>
+    <rect x="860" y="366" width="52" height="8" rx="4"/>
+    <rect x="932" y="280" width="52" height="8" rx="4"/>
+    <rect x="1004" y="346" width="52" height="8" rx="4"/>
   </g>
+  <text x="886" y="672" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="22" fill="#8b98a5" text-anchor="middle">三维绿量：用体积而不是面积衡量绿化</text>
 </svg>

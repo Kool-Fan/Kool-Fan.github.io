@@ -1,38 +1,61 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="项目封面占位图：代码与提交历史">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="项目封面：圆明园绿色网站">
   <defs>
     <linearGradient id="p3bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#121326"/>
+      <stop offset="0" stop-color="#151233"/>
       <stop offset="1" stop-color="#0b0f14"/>
     </linearGradient>
-    <radialGradient id="p3glow" cx="0.7" cy="0.8" r="0.8">
-      <stop offset="0" stop-color="#818cf8" stop-opacity="0.32"/>
-      <stop offset="1" stop-color="#818cf8" stop-opacity="0"/>
+    <radialGradient id="p3glow" cx="0.25" cy="0.2" r="0.8">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
     </radialGradient>
+    <pattern id="p3grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" fill="none" stroke="#231d47" stroke-width="1"/>
+    </pattern>
   </defs>
+
   <rect width="1200" height="750" fill="url(#p3bg)"/>
   <rect width="1200" height="750" fill="url(#p3glow)"/>
-  <g stroke="#818cf8" stroke-width="4" fill="none" stroke-linecap="round">
-    <path d="M250 180 V560"/>
-    <path d="M250 260 C340 260 340 380 440 380 H560"/>
-    <path d="M250 470 C360 470 380 560 500 560 H620"/>
-  </g>
-  <g fill="#121a23" stroke="#818cf8" stroke-width="4">
-    <circle cx="250" cy="180" r="16"/>
-    <circle cx="250" cy="260" r="16"/>
-    <circle cx="250" cy="470" r="16"/>
-    <circle cx="250" cy="560" r="16"/>
-  </g>
-  <g fill="#2dd4bf">
-    <circle cx="576" cy="380" r="14"/>
-    <circle cx="636" cy="560" r="14"/>
-  </g>
-  <g fill="#1f2b38">
-    <rect x="640" y="176" width="200" height="10" rx="5"/>
-    <rect x="640" y="256" width="150" height="10" rx="5"/>
-    <rect x="640" y="466" width="180" height="10" rx="5"/>
-  </g>
-  <g font-family="ui-monospace, Consolas, monospace">
-    <text x="88" y="640" font-size="42" font-weight="700" letter-spacing="6" fill="#e6edf3">PROJECT 03</text>
-    <text x="88" y="692" font-size="24" fill="#8b98a5">替换成你的项目封面截图</text>
+  <rect width="1200" height="750" fill="url(#p3grid)"/>
+
+  <text x="88" y="128" font-family="ui-monospace, Consolas, monospace" font-size="42" font-weight="700" letter-spacing="6" fill="#e6edf3">PROJECT 03</text>
+  <text x="88" y="180" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="26" fill="#8b98a5">圆明园绿色网站 · 三维绿量可视化</text>
+
+  <g transform="translate(120 250)">
+    <rect width="760" height="420" rx="18" fill="#121a23" stroke="#2c2650" stroke-width="2"/>
+    <rect width="760" height="46" rx="18" fill="#1a1638"/>
+    <circle cx="28" cy="23" r="6" fill="#a78bfa"/>
+    <circle cx="50" cy="23" r="6" fill="#60a5fa"/>
+    <circle cx="72" cy="23" r="6" fill="#2dd4bf"/>
+
+    <rect x="28" y="76" width="440" height="316" rx="12" fill="#0b0f14" stroke="#231d47" stroke-width="2"/>
+    <g stroke="#1f2b38" stroke-width="1">
+      <path d="M28 155H468M28 234H468M28 313H468M138 76V392M248 76V392M358 76V392M468 76V392"/>
+    </g>
+    <g fill="#34d399" opacity="0.65">
+      <path d="M96 200 C120 176 158 184 168 206 C178 228 152 248 126 244 C100 240 78 220 96 200 Z"/>
+      <path d="M228 296 C250 274 286 282 294 304 C302 324 278 344 252 340 C228 336 210 316 228 296 Z"/>
+      <path d="M336 168 C356 148 388 154 396 174 C404 192 382 210 358 206 C336 202 320 186 336 168 Z"/>
+    </g>
+    <g fill="#a78bfa">
+      <circle cx="132" cy="212" r="7"/>
+      <circle cx="262" cy="308" r="6"/>
+      <circle cx="366" cy="180" r="6"/>
+    </g>
+
+    <rect x="492" y="76" width="240" height="150" rx="12" fill="#0b0f14" stroke="#231d47" stroke-width="2"/>
+    <g fill="#a78bfa" opacity="0.85">
+      <rect x="516" y="150" width="26" height="52" rx="5"/>
+      <rect x="556" y="122" width="26" height="80" rx="5"/>
+      <rect x="596" y="164" width="26" height="38" rx="5"/>
+      <rect x="636" y="102" width="26" height="100" rx="5"/>
+      <rect x="676" y="136" width="26" height="66" rx="5"/>
+    </g>
+
+    <g fill="#1f2b38">
+      <rect x="492" y="252" width="240" height="10" rx="5"/>
+      <rect x="492" y="282" width="180" height="10" rx="5"/>
+      <rect x="492" y="312" width="210" height="10" rx="5"/>
+      <rect x="492" y="342" width="150" height="10" rx="5"/>
+    </g>
   </g>
 </svg>

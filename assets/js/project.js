@@ -58,7 +58,7 @@
     return;
   }
 
-  document.title = project.title + " · 你的名字";
+  document.title = project.title + " · 董博俊";
   var metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) {
     metaDesc.setAttribute("content", project.summary || project.subtitle || project.title);
