@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绿影寻踪 - AI赋能 构建京城绿色图谱</title>
+    <link rel="stylesheet" href="assets/vendor/tailwind.css">
+    <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    
+    
+</head>
+<body class="bg-neutral text-dark min-h-screen flex flex-col">
+  <a href="../" aria-label="返回作品集首页" style="position:fixed;right:16px;bottom:16px;z-index:9999;display:inline-flex;align-items:center;padding:9px 16px;border-radius:999px;background:rgba(41,47,54,.9);color:#ffffff;font-size:13px;line-height:1;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.2);font-family:system-ui,-apple-system,&quot;Microsoft YaHei&quot;,sans-serif">← 返回作品集</a>
+    <!-- 导航栏 -->
+    <nav id="navbar" class="fixed w-full z-40 transition-all duration-300 bg-white shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="images/logo.png" alt="生态logo" class="h-10 w-auto mr-3">
+                        <span class="text-xl font-bold text-secondary">绿影寻踪</span>
+                    </a>
+                </div>
+                
+                <!-- 桌面导航 -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-primary font-medium border-b-2 border-primary pb-1">首页</a>
+                    <a href="park-eco-index.html" class="text-secondary hover:text-primary transition-colors">公园生态指数</a>
+                    <a href="3d-green-volume.html" class="text-secondary hover:text-primary transition-colors">三维绿量</a>
+                    <a href="knowledge-qa.html" class="text-secondary hover:text-primary transition-colors">知识问答</a>
+                    <a href="contact.html" class="text-secondary hover:text-primary transition-colors">联系我们</a>
+                </div>
+                
+                <!-- 移动端菜单按钮 -->
+                <div class="md:hidden">
+                    <button id="menuBtn" class="text-secondary focus:outline-none">
+                        <i class="fa fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 移动端菜单 -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="index.html" class="text-primary py-2 transition-colors">首页</a>
+                <a href="park-eco-index.html" class="text-secondary hover:text-primary py-2 transition-colors">公园生态指数</a>
+                <a href="3d-green-volume.html" class="text-secondary hover:text-primary py-2 transition-colors">三维绿量</a>
+                <a href="knowledge-qa.html" class="text-secondary hover:text-primary py-2 transition-colors">知识问答</a>
+                <a href="contact.html" class="text-secondary hover:text-primary py-2 transition-colors">联系我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="pt-16 relative h-[80vh] min-h-[600px] flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="images/hero_bg.jpg" alt="英雄区域背景图" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-dark/50"></div>
+        </div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-white leading-tight text-shadow mb-4">
+                    共建生态文明 <br>共享绿色未来
+                </h1>
+                <p class="text-[clamp(1rem,2vw,1.25rem)] text-white/90 mb-8 max-w-2xl">
+                    通过AI技术，构建直观呈现海淀绿色生态的数字图谱。
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="3d-green-volume.html" class="px-8 py-3 bg-primary hover:bg-primary/90 text-white rounded-full font-medium transition-all transform hover:scale-105 shadow-lg">
+                        了解三维绿量
+                    </a>
+                    <a href="park-eco-index.html" class="px-8 py-3 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/30 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg">
+                        查看公园生态数据
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
+                <path fill="#F7FFF7" fill-opacity="1" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,69.3C960,85,1056,107,1152,101.3C1248,96,1344,64,1392,48L1440,32L1440,100L1392,100C1344,100,1248,100,1152,100C1056,100,960,100,864,100C768,100,672,100,576,100C480,100,384,100,288,100C192,100,96,100,48,100L0,100Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- 主要内容 -->
+    <main class="flex-grow">
+        <!-- 关于绿野寻踪 -->
+        <section class="py-16 bg-neutral">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-dark mb-4">什么是绿影寻踪？</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-3xl mx-auto">绿影寻踪是通过AI技术整合北京市海淀区城市公园绿色生态图谱的解决方案，为人们提供海淀城市公园一站式生态服务查询平台。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 统计数据 -->
+        <section class="py-16 bg-gradient-green text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="p-6">
+                        <div class="text-4xl font-bold mb-2 counter" data-target="3500">13</div>
+                        <p class="text-white/80">平台涵盖海淀城市公园数量</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-4xl font-bold mb-2 counter" data-target="120">35.56%</div>
+                        <p class="text-white/80">海淀区绿化率（2024）</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-4xl font-bold mb-2 counter" data-target="85">1.22</div>
+                        <p class="text-white/80">海淀区绿地面积（万公顷）</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-4xl font-bold mb-2 counter" data-target="250">278</div>
+                        <p class="text-white/80">水体面积（公顷）</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 生态指数 -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-dark mb-4">公园生态指数</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-3xl mx-auto">综合分析整合出海淀区主要城市公园的各项生态指标</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-neutral rounded-xl overflow-hidden shadow-md flex flex-col md:flex-row">
+                        <div class="md:w-1/2 h-64 md:h-auto overflow-hidden">
+                            <img src="images/ymy.jpg" alt="圆明园" class="w-full h-full object-cover">
+                        </div>
+                        <div class="md:w-1/2 p-6 flex flex-col justify-center">
+                            <h3 class="text-xl font-semibold text-dark mb-3">圆明园遗址公园</h3>
+                            <p class="text-gray-600 mb-4">曾经的万园之园，占地350多公顷，其中水面面积约140公顷。</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-4">
+                                <span class="flex items-center mr-4"><i class="fa fa-map-marker mr-1"></i> 海淀区清华西路28号</span>
+                            </div>
+                            <a href="park-eco-index.html" class="text-primary hover:text-primary/80 font-medium inline-flex items-center">
+                                查看详情 <i class="fa fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-neutral rounded-xl overflow-hidden shadow-md flex flex-col md:flex-row">
+                        <div class="md:w-1/2 h-64 md:h-auto overflow-hidden">
+                            <img src="images/yhy.jpg" alt="颐和园" class="w-full h-full object-cover">
+                        </div>
+                        <div class="md:w-1/2 p-6 flex flex-col justify-center">
+                            <h3 class="text-xl font-semibold text-dark mb-3">颐和园</h3>
+                            <p class="text-gray-600 mb-4">以杭州西湖风景为蓝本，汲取江南园林的某些设计手法和意境而建成的一座大型天然山水园。</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-4">
+                                <span class="flex items-center mr-4"><i class="fa fa-map-marker mr-1"></i> 海淀区新建宫门路19号</span>
+                            </div>
+                            <a href="park-eco-index.html" class="text-primary hover:text-primary/80 font-medium inline-flex items-center">
+                                查看详情 <i class="fa fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-neutral rounded-xl overflow-hidden shadow-md flex flex-col md:flex-row">
+                        <div class="md:w-1/2 h-64 md:h-auto overflow-hidden">
+                            <img src="images/yyt.jpg" alt="玉渊潭" class="w-full h-full object-cover">
+                        </div>
+                        <div class="md:w-1/2 p-6 flex flex-col justify-center">
+                            <h3 class="text-xl font-semibold text-dark mb-3">玉渊潭公园</h3>
+                            <p class="text-gray-600 mb-4">东方小瑞士，北京的赏樱佳地。</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-4">
+                                <span class="flex items-center mr-4"><i class="fa fa-map-marker mr-1"></i> 海淀区西三环中路10号</span>
+                            </div>
+                            <a href="park-eco-index.html" class="text-primary hover:text-primary/80 font-medium inline-flex items-center">
+                                查看详情 <i class="fa fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-neutral rounded-xl overflow-hidden shadow-md flex flex-col md:flex-row">
+                        <div class="md:w-1/2 h-64 md:h-auto overflow-hidden">
+                            <img src="images/zzy.jpg" alt="紫竹院" class="w-full h-full object-cover">
+                        </div>
+                        <div class="md:w-1/2 p-6 flex flex-col justify-center">
+                            <h3 class="text-xl font-semibold text-dark mb-3">紫竹院公园</h3>
+                            <p class="text-gray-600 mb-4">因园内西北部有明清时期庙宇“福荫紫竹院”而得名，公园造景求其自然，缀石嶙峋精心安置，亭廊轩馆错落有致。</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-4">
+                                <span class="flex items-center mr-4"><i class="fa fa-map-marker mr-1"></i> 海淀区中关村南大街35号</span>
+                            </div>
+                            <a href="park-eco-index.html" class="text-primary hover:text-primary/80 font-medium inline-flex items-center">
+                                查看详情 <i class="fa fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="park-eco-index.html" class="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-full font-medium transition-all transform hover:scale-105 shadow-md">
+                        查看更多案例 <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 三维绿量 -->
+        <section class="py-16 bg-neutral">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-dark mb-4">三维绿量</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-3xl mx-auto">通过AI大模型与高分辨率遥感图像，反演得到区域三维绿量，是衡量区域绿化程度的直观指标。</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="gallery-item overflow-hidden rounded-lg shadow-md cursor-pointer">
+                        <img src="images/ai.jpg" alt="AI识别" class="w-full h-64 object-cover transform hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="gallery-item overflow-hidden rounded-lg shadow-md cursor-pointer">
+                        <img src="images/gedi.jpg" alt="GEDI数据" class="w-full h-64 object-cover transform hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="gallery-item overflow-hidden rounded-lg shadow-md cursor-pointer">
+                        <img src="images/gf7.jpg" alt="遥感影像" class="w-full h-64 object-cover transform hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="gallery-item overflow-hidden rounded-lg shadow-md cursor-pointer">
+                        <img src="images/pc.jpg" alt="点云图" class="w-full h-64 object-cover transform hover:scale-110 transition-transform duration-500">
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="3d-green-volume.html" class="inline-flex items-center px-6 py-3 bg-white hover:bg-gray-50 text-primary border border-primary rounded-full font-medium transition-all transform hover:scale-105 shadow-sm">
+                        了解更多 <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-secondary text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <img src="images/logo.png" alt="生态logo" class="h-8 w-auto mr-3">
+                        <span class="text-white font-bold">绿影寻踪</span>
+                    </div>
+                    <p class="text-white mb-6">
+                        共建生态文明，共享绿色未来。让我们携手努力，共同创造一个人与自然和谐共生的美好世界。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-white transition-colors">
+                            <i class="fa fa-weixin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-white transition-colors">
+                            <i class="fa fa-weibo text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-6">快速链接</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-primary transition-colors">首页</a></li>
+                        <li><a href="park-eco-index.html" class="text-white/80 hover:text-primary transition-colors">公园生态指数</a></li>
+                        <li><a href="3d-green-volume.html" class="text-white/80 hover:text-primary transition-colors">三维绿量</a></li>
+                        <li><a href="knowledge-qa.html" class="text-white/80 hover:text-primary transition-colors">知识问答</a></li>
+                        <li><a href="contact.html" class="text-white/80 hover:text-primary transition-colors">联系我们</a></li>
+                    </ul>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-6">联系我们</h4>
+                    <ul class="space-y-3 text-white/80">
+                        <li class="flex items-center"><i class="fa fa-map-marker mr-2"></i> 北京市海淀区清华东路35号</li>
+                        <li class="flex items-center"><i class="fa fa-phone mr-2"></i> (010) 1234-5678</li>
+                        <li class="flex items-center"><i class="fa fa-envelope mr-2"></i> contact@greenpark.com</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <p class="text-white text-sm">
+                        我们尊重您的隐私，不会向第三方分享您的信息。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-white pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-white mb-4 md:mb-0">
+                        &copy; 2025 绿影寻踪. 保留所有权利.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-500 hover:text-white text-white transition-colors">隐私政策</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-white transition-colors">使用条款</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-white transition-colors">Cookie 政策</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 移动端菜单切换脚本 -->
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('bg-white/90');
+                navbar.classList.add('bg-white');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('bg-white/90');
+                navbar.classList.remove('bg-white');
+            }
+        });
+
+        // 移动端菜单切换
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

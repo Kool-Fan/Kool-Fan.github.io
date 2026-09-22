@@ -96,7 +96,8 @@
     }
 
     if (project.links && project.links.demo) {
-      var demo = el("a", "btn btn-sm", "在线 Demo");
+      var demoLabel = (project.linkLabels && project.linkLabels.demo) || "在线 Demo";
+      var demo = el("a", "btn btn-sm", demoLabel);
       demo.href = project.links.demo;
       demo.target = "_blank";
       demo.rel = "noopener";

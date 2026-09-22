@@ -119,6 +119,7 @@
 
   if (project.links) {
     var actions = el("div", "hero-actions");
+    var customLabels = project.linkLabels || {};
     [
       ["repo", "代码仓库"],
       ["demo", "在线 Demo"],
@@ -128,7 +129,12 @@
       if (!url) {
         return;
       }
-      var link = el("a", "btn" + (pair[0] === "repo" ? " btn-primary" : ""), pair[1]);
+      var isPrimary = pair[0] === "repo" || (pair[0] === "demo" && !project.links.repo);
+      var link = el(
+        "a",
+        "btn" + (isPrimary ? " btn-primary" : ""),
+        customLabels[pair[0]] || pair[1]
+      );
       link.href = url;
       link.target = "_blank";
       link.rel = "noopener";

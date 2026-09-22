@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绿影寻踪 - 海淀区公园生态指数</title>
+    <link rel="stylesheet" href="assets/vendor/tailwind.css">
+    <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    
+    
+</head>
+<body class="bg-neutral text-dark min-h-screen flex flex-col">
+  <a href="../" aria-label="返回作品集首页" style="position:fixed;right:16px;bottom:16px;z-index:9999;display:inline-flex;align-items:center;padding:9px 16px;border-radius:999px;background:rgba(41,47,54,.9);color:#ffffff;font-size:13px;line-height:1;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.2);font-family:system-ui,-apple-system,&quot;Microsoft YaHei&quot;,sans-serif">← 返回作品集</a>
+    <!-- 导航栏 -->
+    <nav id="navbar" class="fixed w-full z-40 transition-all duration-300 bg-white/90 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="images/logo.png" alt="生态logo" class="h-10 w-auto mr-3">
+                        <span class="text-xl font-bold text-secondary">绿影寻踪</span>
+                    </a>
+                </div>
+                
+                <!-- 桌面导航 -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-secondary hover:text-primary transition-colors">首页</a>
+                    <a href="park-eco-index.html" class="text-primary font-medium border-b-2 border-primary pb-1">公园生态指数</a>
+                    <a href="3d-green-volume.html" class="text-secondary hover:text-primary transition-colors">三维绿量</a>
+                    <a href="knowledge-qa.html" class="text-secondary hover:text-primary transition-colors">知识问答</a>
+                    <a href="contact.html" class="text-secondary hover:text-primary transition-colors">联系我们</a>
+                </div>
+                
+                <!-- 移动端菜单按钮 -->
+                <div class="md:hidden">
+                    <button id="menuBtn" class="text-secondary focus:outline-none">
+                        <i class="fa fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 移动端菜单 -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="index.html" class="text-secondary hover:text-primary py-2 transition-colors">首页</a>
+                <a href="park-eco-index.html" class="text-primary py-2 transition-colors">公园生态指数</a>
+                <a href="3d-green-volume.html" class="text-secondary hover:text-primary py-2 transition-colors">三维绿量</a>
+                <a href="knowledge-qa.html" class="text-secondary hover:text-primary py-2 transition-colors">知识问答</a>
+                <a href="contact.html" class="text-secondary hover:text-primary py-2 transition-colors">联系我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主内容区域 -->
+    <main class="flex-grow pt-24 pb-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-[clamp(1.8rem,4vw,2.8rem)] font-bold text-secondary mb-4">海淀区公园生态指数</h1>
+                <p class="text-gray-600 max-w-3xl mx-auto">点击地图上的公园标记，查看各公园的详细信息和生态数据</p>
+            </div>
+
+            <!-- 公园地图容器 -->
+            <div class="relative w-full max-w-5xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+                <!-- 海淀区地图底图 -->
+                <div class="relative bg-primary/20 p-4 md:p-8">
+                    <div class="relative aspect-[4/3] map-container">
+                        <img src="images/hd_bg.png" alt="海淀区地图" class="absolute inset-0 w-full h-full object-contain rounded-lg">
+                        
+                        <!-- 圆明园公园标记 -->
+                        <div class="absolute cursor-pointer park-marker" 
+                             style="top: 56.5%; left: 63%;"
+                             onclick="showParkInfo('yuanmingyuan')">
+                            <div class="flex flex-col items-center">
+                                <div class="marker-icon bg-secondary rounded-full flex items-center justify-center text-white mb-1">
+                                    <i class="fa fa-tree"></i>
+                                </div>
+                                <span class="bg-white text-secondary marker-label rounded shadow whitespace-nowrap">圆明园</span>
+                            </div>
+                        </div>
+                        
+                        <!-- 颐和园标记 -->
+                        <div class="absolute cursor-pointer park-marker"
+                             style="top: 62%; left: 57.5%;"
+                             onclick="showParkInfo('summerpalace')">
+                            <div class="flex flex-col items-center">
+                                <div class="marker-icon bg-secondary rounded-full flex items-center justify-center text-white mb-1">
+                                    <i class="fa fa-tree"></i>
+                                </div>
+                                <span class="bg-white text-secondary marker-label rounded shadow whitespace-nowrap">颐和园</span>
+                            </div>
+                        </div>
+                        
+                        <!-- 紫竹院公园标记 -->
+                        <div class="absolute cursor-pointer park-marker"
+                             style="top: 78%; left: 66%;"
+                             onclick="showParkInfo('zizhuyuan')">
+                            <div class="flex flex-col items-center">
+                                <div class="marker-icon bg-secondary rounded-full flex items-center justify-center text-white mb-1">
+                                    <i class="fa fa-tree"></i>
+                                </div>
+                                <span class="bg-white text-secondary marker-label rounded shadow whitespace-nowrap">紫竹院</span>
+                            </div>
+                        </div>
+                        
+                        <!-- 玉渊潭公园标记 -->
+                        <div class="absolute cursor-pointer park-marker"
+                             style="top: 85%; left: 66.5%;"
+                             onclick="showParkInfo('yuyuantan')">
+                            <div class="flex flex-col items-center">
+                                <div class="marker-icon bg-secondary rounded-full flex items-center justify-center text-white mb-1">
+                                    <i class="fa fa-tree"></i>
+                                </div>
+                                <span class="bg-white text-secondary marker-label rounded shadow whitespace-nowrap">玉渊潭</span>
+                            </div>
+                        </div>
+                        
+                        <!-- 海淀公园标记 -->
+                        <div class="absolute cursor-pointer park-marker"
+                             style="top: 64.5%; left: 62.1%;"
+                             onclick="showParkInfo('haidianpark')">
+                            <div class="flex flex-col items-center">
+                                <div class="marker-icon bg-secondary rounded-full flex items-center justify-center text-white mb-1">
+                                    <i class="fa fa-tree"></i>
+                                </div>
+                                <span class="bg-white text-secondary marker-label rounded shadow whitespace-nowrap">海淀公园</span>
+                            </div>
+                        </div>
+                        
+                        <!-- 东升八家郊野公园标记 -->
+                        <div class="absolute cursor-pointer park-marker"
+                             style="top: 54%; left: 69.5%;"
+                             onclick="showParkInfo('dongsheng')">
+                            <div class="flex flex-col items-center">
+                                <div class="marker-icon bg-secondary rounded-full flex items-center justify-center text-white mb-1">
+                                    <i class="fa fa-tree"></i>
+                                </div>
+                                <span class="bg-white text-secondary marker-label rounded shadow whitespace-nowrap">东升八家</span>
+                            </div>
+                        </div>
+
+                        <!-- 鹫峰国家森林公园标记 -->
+                        <div class="absolute cursor-pointer park-marker" 
+                             style="top: 42%; left: 25%;"
+                             onclick="showParkInfo('jiufeng')">
+                            <div class="flex flex-col items-center">
+                                <div class="marker-icon bg-secondary rounded-full flex items-center justify-center text-white mb-1">
+                                    <i class="fa fa-tree"></i>
+                                </div>
+                                <span class="bg-white text-secondary marker-label rounded shadow whitespace-nowrap">鹫峰森林</span>
+                            </div>
+                        </div>
+
+                        <!-- 翠湖国家城市湿地公园标记 -->
+                        <div class="absolute cursor-pointer park-marker" 
+                             style="top: 28%; left: 43%;"
+                             onclick="showParkInfo('cuihu')">
+                            <div class="flex flex-col items-center">
+                                <div class="marker-icon bg-secondary rounded-full flex items-center justify-center text-white mb-1">
+                                    <i class="fa fa-tree"></i>
+                                </div>
+                                <span class="bg-white text-secondary marker-label rounded shadow whitespace-nowrap">翠湖湿地</span>
+                            </div>
+                        </div>
+
+                        <!-- 北京植物园标记 -->
+                        <div class="absolute cursor-pointer park-marker" 
+                             style="top: 59%; left: 47%;"
+                             onclick="showParkInfo('botanical')">
+                            <div class="flex flex-col items-center">
+                                <div class="marker-icon bg-secondary rounded-full flex items-center justify-center text-white mb-1">
+                                    <i class="fa fa-tree"></i>
+                                </div>
+                                <span class="bg-white text-secondary marker-label rounded shadow whitespace-nowrap">植物园</span>
+                            </div>
+                        </div>
+
+                        <!-- 西山公园标记 -->
+                        <div class="absolute cursor-pointer park-marker" 
+                             style="top: 68%; left: 43.5%;"
+                             onclick="showParkInfo('xishan')">
+                            <div class="flex flex-col items-center">
+                                <div class="marker-icon bg-secondary rounded-full flex items-center justify-center text-white mb-1">
+                                    <i class="fa fa-tree"></i>
+                                </div>
+                                <span class="bg-white text-secondary marker-label rounded shadow whitespace-nowrap">西山公园</span>
+                            </div>
+                        </div>
+
+                        <!-- 香山公园标记 -->
+                        <div class="absolute cursor-pointer park-marker" 
+                             style="top: 62%; left: 43%;"
+                             onclick="showParkInfo('xiangshan')">
+                            <div class="flex flex-col items-center">
+                                <div class="marker-icon bg-secondary rounded-full flex items-center justify-center text-white mb-1">
+                                    <i class="fa fa-tree"></i>
+                                </div>
+                                <span class="bg-white text-secondary marker-label rounded shadow whitespace-nowrap">香山公园</span>
+                            </div>
+                        </div>
+
+                        <!-- 百望山森林公园标记 -->
+                        <div class="absolute cursor-pointer park-marker" 
+                             style="top: 50%; left: 55%;"
+                             onclick="showParkInfo('baiwangshan')">
+                            <div class="flex flex-col items-center">
+                                <div class="marker-icon bg-secondary rounded-full flex items-center justify-center text-white mb-1">
+                                    <i class="fa fa-tree"></i>
+                                </div>
+                                <span class="bg-white text-secondary marker-label rounded shadow whitespace-nowrap">百望山</span>
+                            </div>
+                        </div>
+
+                        <!-- 中关村公园标记 -->
+                        <div class="absolute cursor-pointer park-marker" 
+                             style="top: 40.2%; left: 59%;"
+                             onclick="showParkInfo('zhongguancun')">
+                            <div class="flex flex-col items-center">
+                                <div class="marker-icon bg-secondary rounded-full flex items-center justify-center text-white mb-1">
+                                    <i class="fa fa-tree"></i>
+                                </div>
+                                <span class="bg-white text-secondary marker-label rounded shadow whitespace-nowrap">中关村</span>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+                
+                <!-- 图例说明 -->
+                <div class="p-4 bg-gray-50 border-t border-gray-100">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <div class="w-4 h-4 bg-secondary rounded-full mr-2"></div>
+                        <span>公园位置标记</span>
+                    </div>
+                </div>
+                
+                <!-- 公园信息弹窗 -->
+                <div id="parkInfoModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+                    <div class="bg-white rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 m-4 transform transition-all">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 id="parkTitle" class="text-xl font-bold text-secondary"></h3>
+                            <button onclick="hideParkInfo()" class="text-gray-500 hover:text-gray-700">
+                                <i class="fa fa-times text-xl"></i>
+                            </button>
+                        </div>
+                        <div id="parkContent" class="space-y-4"></div>
+                        
+                        <!-- 生态指数可视化 -->
+                        <div class="mt-6">
+                            <h4 class="font-medium text-gray-700 mb-2">生态指数评分</h4>
+                            <div class="h-4 bg-gray-200 rounded-full overflow-hidden">
+                                <div id="ecoIndexBar" class="h-full bg-gradient-to-r from-primary to-secondary rounded-full" style="width: 0%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                <span>0</span>
+                                <span>50</span>
+                                <span>100</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // 公园数据
+        const parkData = {
+            yuanmingyuan: {
+                title: "圆明园遗址公园",
+                index: 89,
+                content: `
+                    <img src="images/ymy.jpg" alt="圆明园" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <p><strong>位置：</strong>海淀区清华西路28号</p>
+                    <p><strong>面积：</strong>352公顷</p>
+                    <p>绿地面积：250公顷</p>
+                    <p>水体面积：96公顷</p>
+                    <p><strong>简介：</strong>圆明园是清代大型皇家园林，由圆明园、长春园和绮春园组成，被誉为"万园之园"。现为遗址公园，保留了大量历史遗迹。</p>
+                    <p><strong>生态特色：</strong>拥有丰富的湿地生态系统，植被覆盖率达85%以上，是城市中重要的生物多样性保护区。</p>
+                    <p>主要植被种类：油松、白皮松、圆柏、侧柏、刺柏、杨、青杨、绦柳、柽柳、玉兰、荷花、竹等</p>
+                    <p><strong>植被覆盖率：</strong>87%</p>
+                `
+            },
+            summerpalace: {
+                title: "颐和园",
+                index: 97,
+                content: `
+                    <img src="images/yhy.jpg" alt="颐和园" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <p><strong>位置：</strong>海淀区新建宫门路19号</p>
+                    <p><strong>面积：</strong>300.9公顷</p>
+                    <p>绿地面积：78公顷</p>
+                    <p>水体面积：220公顷</p>
+                    <p><strong>简介：</strong>中国现存规模最大、保存最完整的皇家园林，被誉为"皇家园林博物馆"，1998年被列入《世界遗产名录》。</p>
+                    <p><strong>生态特色：</strong>拥有昆明湖等大面积水域，山水结合的园林景观，植物种类超过1000种。</p>
+                    <p>主要植被种类：山桃、玉兰、西府海棠、榆叶梅、碧桃、丁香、樱花、牡丹等</p>
+                    <p><strong>植被覆盖率：</strong>75%</p>
+                `
+            },
+            zizhuyuan: {
+                title: "紫竹院公园",
+                index: 78,
+                content: `
+                    <img src="images/zzy.jpg" alt="紫竹院公园" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <p><strong>位置：</strong>海淀区中关村南大街35号</p>
+                    <p><strong>面积：</strong>45.73公顷</p>
+                    <p>绿地面积：30.49公顷</p>
+                    <p>水体面积：15.24公顷</p>
+                    <p><strong>简介：</strong>以竹景著称的自然式山水园，因园内多竹林而得名，是北京市内著名的观赏竹胜地。</p>
+                    <p><strong>生态特色：</strong>拥有各类竹子近百种，水域面积占三分之一，形成了独特的竹林生态系统。</p>
+                    <p>主要植被种类：金镶玉竹、筠竹、罗汉竹、铺地竹、早园竹、紫竹、斑竹、翠竹、水杉、银杏等</p>
+                    <p><strong>植被覆盖率：</strong>98%</p>
+                `
+            },
+            yuyuantan: {
+                title: "玉渊潭公园",
+                index: 85,
+                content: `
+                    <img src="images/yyt.jpg" alt="玉渊潭公园" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <p><strong>位置：</strong>海淀区西三环中路10号</p>
+                    <p><strong>面积：</strong>129.35 公顷</p>
+                    <p>绿地面积：74公顷</p>
+                    <p>水体面积：60.66公顷</p>
+                    <p><strong>简介：</strong>以樱花闻名的城市公园，每年春季举办樱花节，吸引大量游客。</p>
+                    <p><strong>生态特色：</strong>拥有广阔的湖面和丰富的水生植物，是迁徙鸟类的重要栖息地。</p>
+                    <p>主要植被种类：樱花、银杏、水杉、元宝枫、白蜡、紫藤、牡丹等</p>
+                    <p><strong>植被覆盖率：</strong>95%</p>
+                `
+            },
+            haidianpark: {
+                title: "海淀公园",
+                index: 46,
+                content: `
+                    <img src="images/hdgy.jpg" alt="海淀公园" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <p><strong>位置：</strong>海淀区新建宫门路2号</p>
+                    <p><strong>面积：</strong>34公顷</p>
+                    <p>绿地面积：23公顷</p>
+                    <p>水体面积：2.8公顷</p>
+                    <p><strong>简介：</strong>毗邻颐和园，是一座集自然景观与人文景观于一体的综合性公园。</p>
+                    <p><strong>生态特色：</strong>采用生态友好型设计，拥有城市中罕见的大面积草坪和乡土植物群落。</p>
+                    <p>主要植被种类：雪松、油松、云杉、银杏、碧桃、千头椿、合欢、洋白蜡、牡丹、芍药、榆叶梅、山杏等</p>
+                    <p><strong>植被覆盖率：</strong>67.6%</p>
+                `
+            },
+            dongsheng: {
+                title: "东升八家郊野公园",
+                index: 75,
+                content: `
+                    <img src="images/dsbj.jpg" alt="东升八家郊野公园" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <p><strong>位置：</strong>海淀区东升乡八家村</p>
+                    <p><strong>面积：</strong>101.45公顷</p>
+                    <p>绿地面积：95.36公顷</p>
+                    <p>水体面积：1公顷</p>
+                    <p><strong>简介：</strong>以"城市森林"为特色的郊野公园，保留了较多的自然野趣。</p>
+                    <p><strong>生态特色：</strong>以乡土树种为主，构建了近自然的植物群落，为野生动物提供了良好的栖息环境。</p>
+                    <p>主要植被种类：白蜡、马褂木、元宝枫、暴马丁香、法桐、月兰、蒲公英、连钱草、蛇莓等</p>
+                    <p><strong>植被覆盖率：</strong>94%</p>
+                `
+            },
+            jiufeng: {
+                title: "鹫峰国家森林公园",
+                index: 92,
+                content: `
+                    <img src="images/jf.jpg" alt="鹫峰国家森林公园" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <p><strong>位置：</strong>海淀区苏家坨镇北安河村</p>
+                    <p><strong>面积：</strong>832公顷</p>
+                    <p>绿地面积：750公顷</p>
+                    <p>水体面积：15公顷</p>
+                    <p><strong>简介：</strong>北京海淀区西北部的国家森林公园，以"京西小黄山"著称，拥有丰富的森林资源和珍稀野生动植物。</p>
+                    <p><strong>生态特色：</strong>森林覆盖率达90%以上，拥有天然次生林和人工林，是重要的生物多样性保护区和天然氧吧。</p>
+                    <p>主要植被种类：油松、华山松、侧柏、栎类、槭类、山杏、山桃、连翘、绣线菊等</p>
+                    <p><strong>植被覆盖率：</strong>95%</p>
+                `
+            },
+            cuihu: {
+                title: "翠湖国家城市湿地公园",
+                index: 88,
+                content: `
+                    <img src="images/ch.jpg" alt="翠湖国家城市湿地公园" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <p><strong>位置：</strong>海淀区上庄镇翠湖南路</p>
+                    <p><strong>面积：</strong>157公顷</p>
+                    <p>绿地面积：85公顷</p>
+                    <p>水体面积：67公顷</p>
+                    <p><strong>简介：</strong>北京首个国家级城市湿地公园，以保护和恢复湿地生态系统为主要目标，是城市中的天然湿地。</p>
+                    <p><strong>生态特色：</strong>拥有完整的湿地生态系统，是众多水鸟的栖息地和迁徙中转站，生物多样性丰富。</p>
+                    <p>主要植被种类：芦苇、香蒲、荷花、睡莲、菖蒲、千屈菜、水葱、慈姑等</p>
+                    <p><strong>植被覆盖率：</strong>85%</p>
+                `
+            },
+            botanical: {
+                title: "北京植物园",
+                index: 94,
+                content: `
+                    <img src="images/bjzwy.jpg" alt="北京植物园" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <p><strong>位置：</strong>海淀区香山卧佛寺路</p>
+                    <p><strong>面积：</strong>564公顷</p>
+                    <p>绿地面积：520公顷</p>
+                    <p>水体面积：25公顷</p>
+                    <p><strong>简介：</strong>集科学研究、科普教育、游览休憩于一体的综合性植物园，是国家AAAA级旅游景区。</p>
+                    <p><strong>生态特色：</strong>拥有植物种类超过3000种，建有多个专业园区，是重要的植物多样性保护和展示基地。</p>
+                    <p>主要植被种类：牡丹、芍药、月季、樱花、桃花、梅花、竹类、松柏、槭树、银杏等</p>
+                    <p><strong>植被覆盖率：</strong>92%</p>
+                `
+            },
+            xishan: {
+                title: "西山公园",
+                index: 86,
+                content: `
+                    <img src="images/xs.jpg" alt="西山公园" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <p><strong>位置：</strong>海淀区西山风景区</p>
+                    <p><strong>面积：</strong>125公顷</p>
+                    <p>绿地面积：110公顷</p>
+                    <p>水体面积：8公顷</p>
+                    <p><strong>简介：</strong>依托西山自然山体建设的山地公园，以自然山林景观为特色，是市民登山健身的好去处。</p>
+                    <p><strong>生态特色：</strong>保持了原有的山地植被和自然地貌，形成了完整的山地生态系统，生物多样性丰富。</p>
+                    <p>主要植被种类：油松、侧柏、栎类、槭树、山杏、山桃、连翘、酸枣、荆条等</p>
+                    <p><strong>植被覆盖率：</strong>88%</p>
+                `
+            },
+            xiangshan: {
+                title: "香山公园",
+                index: 91,
+                content: `
+                    <img src="images/xsgy.jpg" alt="香山公园" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <p><strong>位置：</strong>海淀区买卖街40号</p>
+                    <p><strong>面积：</strong>188公顷</p>
+                    <p>绿地面积：165公顷</p>
+                    <p>水体面积：12公顷</p>
+                    <p><strong>简介：</strong>著名的皇家园林和红叶观赏胜地，有"西山晴雪"之称，是北京秋季赏红叶的最佳地点。</p>
+                    <p><strong>生态特色：</strong>以黄栌为主的彩叶林闻名，森林生态系统完整，是重要的城市绿肺和生态屏障。</p>
+                    <p>主要植被种类：黄栌、元宝枫、火炬树、栎类、松柏、槭树、山杏、山桃等</p>
+                    <p><strong>植被覆盖率：</strong>90%</p>
+                `
+            },
+            baiwangshan: {
+                title: "百望山森林公园",
+                index: 89,
+                content: `
+                    <img src="images/bws.jpg" alt="百望山森林公园" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <p><strong>位置：</strong>海淀区黑山扈北口19号</p>
+                    <p><strong>面积：</strong>200公顷</p>
+                    <p>绿地面积：180公顷</p>
+                    <p>水体面积：5公顷</p>
+                    <p><strong>简介：</strong>太行山余脉进入京城的第一道山梁，被称为"太行前哨第一峰"，是登高望远的绝佳地点。</p>
+                    <p><strong>生态特色：</strong>以天然次生林为主，植被垂直分布明显，是重要的生态功能区和野生动物栖息地。</p>
+                    <p>主要植物种类：油松、侧柏、栎类、槭树、山杏、山桃、连翘、酸枣、野蔷薇等</p>
+                    <p><strong>植被覆盖率：</strong>90%</p>
+                `
+            },
+            zhongguancun: {
+                title: "中关村公园",
+                index: 68,
+                content: `
+                    <img src="images/zgc.jpg" alt="中关村公园" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <p><strong>位置：</strong>海淀区中关村南大街</p>
+                    <p><strong>面积：</strong>15公顷</p>
+                    <p>绿地面积：12公顷</p>
+                    <p>水体面积：1.5公顷</p>
+                    <p><strong>简介：</strong>位于中关村核心区的城市公园，为周边高新技术企业和居民提供休闲娱乐空间。</p>
+                    <p><strong>生态特色：</strong>虽然面积不大，但绿化精致，采用现代园林设计理念，是城市中的绿色氧吧。</p>
+                    <p>主要植被种类：银杏、国槐、白蜡、云杉、月季、牡丹、芍药、草坪等</p>
+                    <p><strong>植被覆盖率：</strong>80%</p>
+                `
+            },
+            
+        };
+
+        // 显示公园信息
+        function showParkInfo(parkId) {
+            const park = parkData[parkId];
+            if (park) {
+                document.getElementById('parkTitle').textContent = park.title;
+                document.getElementById('parkContent').innerHTML = park.content;
+                document.getElementById('ecoIndexBar').style.width = `${park.index}%`;
+                document.getElementById('parkInfoModal').classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // 防止背景滚动
+            }
+        }
+
+        // 隐藏公园信息
+        function hideParkInfo() {
+            document.getElementById('parkInfoModal').classList.add('hidden');
+            document.body.style.overflow = ''; // 恢复滚动
+        }
+
+        // 点击模态框外部关闭
+        document.getElementById('parkInfoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideParkInfo();
+            }
+        });
+    </script>
+
+    <!-- 页脚 -->
+    <footer class="bg-secondary text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <img src="images/logo.png" alt="生态logo" class="h-8 w-auto mr-3">
+                        <span class="text-white font-bold">绿影寻踪</span>
+                    </div>
+                    <p class="text-white/80 mb-6">
+                        共建生态文明，共享绿色未来。让我们携手努力，共同创造一个人与自然和谐共生的美好世界。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-primary transition-colors">
+                            <i class="fa fa-weixin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-primary transition-colors">
+                            <i class="fa fa-weibo text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-6">快速链接</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-white/80 hover:text-primary transition-colors">首页</a></li>
+                        <li><a href="park-eco-index.html" class="text-primary transition-colors">公园生态指数</a></li>
+                        <li><a href="3d-green-volume.html" class="text-white/80 hover:text-primary transition-colors">三维绿量</a></li>
+                        <li><a href="knowledge-qa.html" class="text-white/80 hover:text-primary transition-colors">知识问答</a></li>
+                        <li><a href="contact.html" class="text-white/80 hover:text-primary transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-6">联系我们</h4>
+                    <ul class="space-y-3 text-white/80">
+                        <li class="flex items-center"><i class="fa fa-map-marker mr-2"></i> 北京市海淀区清华东路35号</li>
+                        <li class="flex items-center"><i class="fa fa-phone mr-2"></i> (010) 1234-5678</li>
+                        <li class="flex items-center"><i class="fa fa-envelope mr-2"></i> contact@greenpark.com</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-6">隐私政策</h4>
+                    <p class="text-white/80 text-sm">
+                        我们尊重您的隐私，不会向第三方分享您的信息。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-white/60 text-sm mb-4 md:mb-0">
+                        &copy; 2025 绿影寻踪. 保留所有权利.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-white/60 hover:text-white transition-colors text-sm">隐私政策</a>
+                        <a href="#" class="text-white/60 hover:text-white transition-colors text-sm">使用条款</a>
+                        <a href="#" class="text-white/60 hover:text-white transition-colors text-sm">Cookie 政策</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 移动端菜单切换脚本 -->
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('bg-white/90');
+                navbar.classList.add('bg-white');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('bg-white/90');
+                navbar.classList.remove('bg-white');
+            }
+        });
+
+        // 移动端菜单切换
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
