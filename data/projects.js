@@ -208,7 +208,7 @@ window.PROJECTS = [
       { label: "训练轮数", value: "236 轮" }
     ],
     links: {
-      repo: "",
+      repo: "https://github.com/Kool-Fan/yolov5-traffic-detection",
       demo: "",
       docs: ""
     },
@@ -297,9 +297,12 @@ window.PROJECTS = [
       { label: "客户端架构", value: "MVVM" }
     ],
     links: {
-      repo: "",
+      repo: "https://github.com/Kool-Fan/ai-camera-android",
       demo: "",
-      docs: ""
+      docs: "https://github.com/Kool-Fan/ai-camera-android/releases"
+    },
+    linkLabels: {
+      docs: "下载 APK"
     },
     sections: [
       {

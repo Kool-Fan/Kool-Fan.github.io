@@ -1,162 +1,35 @@
-# 董博俊 · 个人作品集网站
-
-一个零依赖的静态作品集站点，纯手写 HTML / CSS / JavaScript，托管在 GitHub Pages 上。
-首页负责说清"我是谁、做过什么"，内页负责把每个项目的背景、我负责的部分和技术路线讲清楚。
+# 董博俊 · 个人作品集
 
 **线上地址：** https://kool-fan.github.io
-**仓库地址：** https://github.com/Kool-Fan/Kool-Fan.github.io
 
-## 特点
+北京林业大学物联网工程专业 2027 届本科生，方向是嵌入式开发、机器人系统与计算机视觉。
+这个站点收录了四个项目，每个都写清了背景、我负责的部分、关键技术决策与结果——不是作品堆砌，
+而是把「遇到什么问题、怎么判断、最后做成什么样」讲完整。
 
-- 无框架、无构建步骤：克隆下来就能打开，不需要装 Node，也不会有依赖过期问题
-- 项目内容集中在 `data/projects.js` 一个文件，加项目 = 复制一段对象改内容
-- 深色 / 浅色主题，跟随系统并记住选择
-- 响应式布局，手机端同样是完整版式，导航可横向滑动
-- 打印样式，浏览器里 `Ctrl + P` 可以直接存成干净的 PDF
-- 基本 SEO 与无障碍支持：语义化标签、alt 文本、键盘可达、跳过导航
+## 项目
 
-## 目录结构
-
-```
-.
-├── index.html                 首页：首屏、项目、关于、技能、专利、经历、联系
-├── project.html               项目详情页，通过 ?id=xxx 读取项目数据
-├── 404.html                   找不到页面时的兜底页
-├── favicon.svg                浏览器标签页图标
-├── data/
-│   └── projects.js          ★ 项目数据，全站唯一内容来源
-├── assets/
-│   ├── css/style.css        ★ 全站样式，改 --accent 变量即可换主题色
-│   ├── js/main.js             首页交互与项目卡片渲染
-│   ├── js/project.js          详情页渲染
-│   ├── img/                   头像、项目封面、技术流程图
-│   │   └── ai-camera/         AI 相机的界面截图
-│   │   └── yolo/              YOLOv5 的训练曲线、混淆矩阵与预测对比图
-│   ├── video/                 演示视频（ROS 小车 26MB + AI 相机 11MB）
-│   └── resume/resume.pdf      简历 PDF（已放入，替换同名文件即可更新）
-├── green-volume/              圆明园三维绿量网站（独立的静态子站，详见下文）
-└── .nojekyll                  告诉 GitHub Pages 不要用 Jekyll 处理
-```
-
-## 当前收录的项目
-
-| 项目 | 时间 | 我的角色 |
+| 项目 | 我的角色 | 关键内容 |
 |---|---|---|
-| 基于大模型与 ROS2 的沙盘智能导航小车 | 2026.09 – 2026.11 | 核心开发（含实机演示视频） |
-| 圆明园三维绿量网站（绿影寻踪） | 2025 | 大创技术负责 · 暑期社会实践队长（院级三等奖） |
-| YOLOv5 交通目标检测：指示牌 / 车辆 / 信号灯 | 2025 – 2026 第一学期 | 个人项目（图像处理与深度学习课程大作业） |
-| AI 相机：实时景观识别与智能评分 APP | 2025 | 个人项目（移动开发技术课程大作业） |
+| **[基于大模型与 ROS2 的沙盘智能导航小车](https://kool-fan.github.io/project.html?id=ros2-navigation-platform)** | 核心开发 | 定位到出厂固件航向虚报 1.8~3.8 倍的根因并修复，解决建图自转与导航失效；实现 ArUco 厘米级对准闭环与面向大模型的路径规划接口 |
+| **[AI 相机：实时景观识别与智能评分（Android）](https://kool-fan.github.io/project.html?id=ai-camera-android)** | 个人项目 | 端侧 TensorFlow Lite 推理 + MVVM 架构 + ROOM 持久化 + Retrofit 同步，配套 Flask 服务端与局域网自动发现 · [源码](https://github.com/Kool-Fan/ai-camera-android) · [APK](https://github.com/Kool-Fan/ai-camera-android/releases) |
+| **[YOLOv5 交通目标检测](https://kool-fan.github.io/project.html?id=yolov5-traffic-detection)** | 个人项目 | 从 BDD100K 挑图手工标注自建数据集，训练指示牌 / 车辆 / 信号灯三类检测；用混淆矩阵定位到 46% 的指示牌被判为背景 · [源码](https://github.com/Kool-Fan/yolov5-traffic-detection) |
+| **[圆明园三维绿量网站（绿影寻踪）](https://kool-fan.github.io/project.html?id=yuanmingyuan-green-volume)** | 大创技术负责 · 暑期社会实践队长 | 把三维绿量算法做成公众可访问的可视化网站，暑期社会实践获院级三等奖 · [网站](https://kool-fan.github.io/green-volume/) |
 
-ROS 小车那一页的内容来自项目实际代码与交付文档，分五个部分：航向修复、激光扫描运动补偿、
-Nav2 参数整定、ArUco 厘米级对准和面向大模型的接口层。**该项目的源码不公开**，
-页面上只放演示视频与技术说明。
+## 关于这个站点
 
-第二个项目把大创的算法工作和暑期社会实践的网站成果合在一页：算法端负责模型训练与 GIS 提取，
-呈现端负责把三维绿量做成公众能访问的网站，网站放在 `green-volume/` 子目录里可以直接打开。
+纯手写的静态站点，HTML / CSS / JavaScript，没有框架也没有构建步骤，托管在 GitHub Pages 上。
+内容与视图分离：项目数据集中在 `data/projects.js`，详情页通过 `project.html?id=xxx` 渲染。
 
-第三个是 Android 项目。由于手上没有安卓手机可以现场演示，这一页的展示方式是**实机演示视频 +
-从视频里截取的界面截图**，再配上架构说明与开发过程中踩过的坑；源码与 APK 都没有公开。
+支持深色 / 浅色主题，手机端是完整版式（导航可横向滑动），并做了基本的 SEO 与无障碍处理
+（语义化标签、图片 alt、键盘可达、跳过导航）。两段项目演示视频已重新编码为 1080p 并加了
+`+faststart`，可以边下边播；页面用 `preload="metadata"`，不点播放不会加载整个文件。
 
-YOLOv5 那一页用的是训练过程自动生成的产物：训练曲线、混淆矩阵、F1 曲线、Mosaic 增强批次
-和验证集「真值 vs 预测」对照图。指标来自训练日志 `results.csv` 的逐轮统计，没有另外估算。
+站点的部署方式、内容更新步骤与目录说明见 [MAINTENANCE.md](MAINTENANCE.md)。
 
-站点文字统一按"面向招聘方"来写：只陈述做过什么、怎么做的、结果如何，不出现写给自己看的说明
-或维护提示（例如"这里可以补充……"）。需要往页面上加内容时，直接改 `data/projects.js` 里对应
-项目的 `sections` 即可。
+## 联系
 
-## 绿影寻踪网站（`green-volume/`）
+邮箱：bihceuxj@163.com ｜ GitHub：https://github.com/Kool-Fan
 
-这是暑期社会实践做出的静态网站，线上地址 https://kool-fan.github.io/green-volume/ 。
-原始文件放在本地暑期实践目录里，接入作品集时做了三件事：
+---
 
-1. **移除外部 CDN 依赖**。原页面运行时从 `cdn.tailwindcss.com` 加载 Tailwind、从 jsDelivr 加载
-   Font Awesome 和 Chart.js。这几个域名在国内网络下不稳定，一旦加载失败页面会完全失去样式，
-   所以改成站内自带：用 Tailwind CLI 把页面用到的类预编译成 `assets/vendor/tailwind.css`
-   （21KB，不再需要运行时编译），字体图标和图表库也换成本地文件。现在整站没有任何外部请求。
-2. **压缩图片**。原图 37 张、合计 19.2MB，其中不少是被当成照片用的 PNG。做了尺寸限制（最长边
-   1400px）与格式转换（照片型 PNG 转 JPEG），压到 7MB。
-3. **加返回入口**。每个页面右下角有「返回作品集」按钮，方便招聘方看完再回到主页。
-
-要更新这个网站，把改动后的文件覆盖到 `green-volume/` 即可。如果新增了 Tailwind 类名，需要重新
-编译一次 CSS，具体步骤和命令写在 `green-volume/_build/README.md` 里。
-
-## 演示视频
-
-两段演示视频都放在 `assets/video/`：
-
-| 文件 | 内容 | 规格 | 体积 |
-|---|---|---|---|
-| `ros-navigation-demo.mp4` | ROS 小车实机演示 | 1080p / 5 分 46 秒 | 26MB（原始 390MB） |
-| `ai-camera-demo.mp4` | AI 相机实机演示 | 1080p / 2 分 19 秒 | 11MB（原始 305MB） |
-
-原始素材都远超 GitHub 单文件 100MB 的上限，已用 ffmpeg 以 H.264 重新编码，并加了 `+faststart`
-以便边下边播（页面里 `preload="metadata"`，不点播放不会加载整个文件）。AI 相机那段原视频音轨是
-静音的（-91dB），已直接去掉。
-
-替换视频时保持文件名不变即可；换封面帧就替换 `assets/img/ros-car-poster.jpg` 或
-`assets/img/ai-camera-poster.jpg`。项目数据里的 `video` 字段控制是否显示播放器，
-`gallery` 字段控制是否显示界面截图，留空表示该项目没有。
-
-## 怎么更新内容
-
-1. **改项目**：编辑 `data/projects.js`。每个项目是一个对象，字段含义写在文件开头的注释里。
-2. **改个人信息**：编辑 `index.html`，首屏、关于、技能、专利、经历、联系各是一段独立区块，
-   用注释标了位置。
-3. **换图片**：把 `assets/img/` 里的封面图换成你自己的截图（建议 1200×750，格式 PNG，
-   保持同名可以直接覆盖，不用改代码）。
-4. **更新简历**：用新的 PDF 覆盖 `assets/resume/resume.pdf`，文件名保持不变。
-5. **自查**：在仓库上一级目录运行
-   `node ../../work/check-site.mjs .`（脚本会检查项目字段缺失、id 重复、图片路径写错等问题）。
-
-改完后提交并推送，几十秒后线上自动更新：
-
-```bash
-git add -A
-git commit -m "更新项目内容"
-git push
-```
-
-## 本地预览
-
-直接双击 `index.html` 就能看，但因为项目列表由 JavaScript 渲染，建议用本地服务器：
-
-```bash
-# Python 3
-python -m http.server 8000
-
-# 或者 Node 环境
-npx serve .
-```
-
-然后浏览器打开 http://localhost:8000 。
-
-## 部署状态
-
-已经部署完成，配置如下：
-
-- 仓库：`Kool-Fan/Kool-Fan.github.io`（public）
-- Pages 来源：`main` 分支根目录 `/`
-- 站点地址：https://kool-fan.github.io
-
-仓库名符合 GitHub Pages 的用户站规则（`<用户名>.github.io`），所以站点地址不带仓库名后缀，
-链接更短，也方便放进简历。
-
-### 想换成自己的域名
-
-1. 买一个域名，比如 `dongbojun.com`，一年几十块。
-2. 仓库 Settings → Pages → Custom domain 填进去，GitHub 会自动生成 `CNAME` 文件并提交。
-3. 到域名服务商加 DNS 解析：`A` 记录指向 GitHub Pages 的四个 IP，或 `CNAME` 指向 `kool-fan.github.io`。
-4. 勾选 Enforce HTTPS。
-
-## 对外分享前的自查清单
-
-- [ ] 手机浏览器打开一次，首屏信息完整、按钮能点、导航能滑
-- [ ] 每个项目卡片的封面图正常显示，没有裂图
-- [ ] 三个项目的「可补充的内容」已经按实际情况补写或删掉
-- [ ] 简历 PDF 能正常下载，且里面的邮箱链接是通的
-- [ ] 用无痕窗口打开一次，确认不依赖登录状态
-- [ ] 换一台设备或让朋友点一次，确认大陆网络能正常访问
-
-## License
-
-代码部分以 MIT 协议开源，站点内的个人内容、简历与项目资料归作者所有，请勿直接复用。
+站点内的个人内容、简历与项目资料归作者所有，请勿直接复用。
