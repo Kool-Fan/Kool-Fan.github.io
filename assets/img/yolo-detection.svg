@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="项目封面：YOLOv5 交通目标检测，识别指示牌、车辆与信号灯">
+  <defs>
+    <linearGradient id="ydbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a1408"/>
+      <stop offset="1" stop-color="#0b0f14"/>
+    </linearGradient>
+    <radialGradient id="ydglow" cx="0.22" cy="0.28" r="0.8">
+      <stop offset="0" stop-color="#fbbf24" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ydglow2" cx="0.86" cy="0.82" r="0.7">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ydroad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#161d29"/>
+      <stop offset="1" stop-color="#0b0f14"/>
+    </linearGradient>
+    <linearGradient id="ydcurve" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#fbbf24"/>
+      <stop offset="1" stop-color="#34d399"/>
+    </linearGradient>
+    <pattern id="ydgrid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" fill="none" stroke="#2a2412" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#ydbg)"/>
+  <rect width="1200" height="750" fill="url(#ydglow)"/>
+  <rect width="1200" height="750" fill="url(#ydglow2)"/>
+  <rect width="1200" height="750" fill="url(#ydgrid)"/>
+
+  <text x="88" y="128" font-family="ui-monospace, Consolas, monospace" font-size="42" font-weight="700" letter-spacing="6" fill="#e6edf3">PROJECT 03</text>
+  <text x="88" y="180" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="26" fill="#8b98a5">YOLOv5 交通目标检测 · sign / car / signal</text>
+
+  <!-- 检测画面 -->
+  <g transform="translate(88 232)">
+    <rect width="700" height="400" rx="16" fill="url(#ydroad)" stroke="#2b3140" stroke-width="2"/>
+    <!-- 路面 -->
+    <path d="M310 400 L190 0 H510 L390 400 Z" fill="#151c26" opacity="0.9"/>
+    <g stroke="#2b3140" stroke-width="3" stroke-dasharray="18 16">
+      <path d="M350 400 V300 M350 250 V190 M350 150 V90"/>
+    </g>
+    <g stroke="#1f2733" stroke-width="2">
+      <path d="M0 300 H700 M0 200 H700 M0 100 H700"/>
+    </g>
+
+    <!-- 检测框：车辆 -->
+    <g fill="none" stroke="#22d3ee" stroke-width="3">
+      <rect x="176" y="232" width="112" height="86" rx="4"/>
+    </g>
+    <rect x="176" y="210" width="74" height="22" rx="4" fill="#22d3ee"/>
+    <text x="184" y="226" font-family="ui-monospace, Consolas, monospace" font-size="15" fill="#04141a">car 0.89</text>
+
+    <!-- 检测框：信号灯 -->
+    <g fill="none" stroke="#fbbf24" stroke-width="3">
+      <rect x="470" y="96" width="34" height="62" rx="4"/>
+    </g>
+    <rect x="470" y="74" width="96" height="22" rx="4" fill="#fbbf24"/>
+    <text x="478" y="90" font-family="ui-monospace, Consolas, monospace" font-size="15" fill="#1a1204">signal 0.82</text>
+
+    <!-- 检测框：指示牌 -->
+    <g fill="none" stroke="#34d399" stroke-width="3">
+      <rect x="556" y="196" width="52" height="46" rx="4"/>
+    </g>
+    <rect x="556" y="174" width="80" height="22" rx="4" fill="#34d399"/>
+    <text x="564" y="190" font-family="ui-monospace, Consolas, monospace" font-size="15" fill="#04140f">sign 0.61</text>
+  </g>
+
+  <!-- 训练指标面板 -->
+  <g transform="translate(828 232)">
+    <rect width="284" height="400" rx="16" fill="#121a23" stroke="#2b3140" stroke-width="2"/>
+    <text x="24" y="42" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="18" fill="#8b98a5">训练曲线</text>
+
+    <g stroke="#1f2b38" stroke-width="1">
+      <path d="M28 96 H256 M28 156 H256 M28 216 H256 M28 276 H256"/>
+    </g>
+    <g stroke="#22d3ee" stroke-width="1" stroke-opacity="0.35">
+      <path d="M28 330 V96"/>
+    </g>
+    <path d="M28 330 C70 322 92 292 116 250 C142 202 168 178 196 166 C222 155 240 152 256 150"
+          fill="none" stroke="url(#ydcurve)" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="256" cy="150" r="6" fill="#34d399"/>
+
+    <text x="28" y="358" font-family="ui-monospace, Consolas, monospace" font-size="15" fill="#8b98a5">mAP@0.5</text>
+    <text x="256" y="358" font-family="ui-monospace, Consolas, monospace" font-size="22" font-weight="700" fill="#fbbf24" text-anchor="end">0.67</text>
+  </g>
+
+  <!-- 类别图例 -->
+  <g font-family="ui-monospace, Consolas, monospace" font-size="17" fill="#8b98a5">
+    <g>
+      <rect x="88" y="676" width="14" height="14" rx="3" fill="#22d3ee"/>
+      <text x="112" y="689">car</text>
+    </g>
+    <g>
+      <rect x="176" y="676" width="14" height="14" rx="3" fill="#fbbf24"/>
+      <text x="200" y="689">signal</text>
+    </g>
+    <g>
+      <rect x="288" y="676" width="14" height="14" rx="3" fill="#34d399"/>
+      <text x="312" y="689">sign</text>
+    </g>
+    <text x="1112" y="689" text-anchor="end">训练集 105 张 · 验证集 15 张</text>
+  </g>
+</svg>

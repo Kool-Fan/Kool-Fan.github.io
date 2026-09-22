@@ -171,8 +171,9 @@
   if (project.video && project.video.src) {
     wrap.appendChild(renderVideo(project.video, project.title));
   } else {
+    var detailSrc = project.detailImage || project.cover || "assets/img/project-1.svg";
     var cover = el("img", "detail-cover");
-    cover.src = project.cover || "assets/img/project-1.svg";
+    cover.src = detailSrc;
     cover.alt = project.title + " 封面";
     wrap.appendChild(cover);
   }

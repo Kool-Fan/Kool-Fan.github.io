@@ -12,6 +12,8 @@
  *   role         你的角色，团队项目必须写清自己负责哪部分
  *   tags         技术栈标签，4-6 个
  *   cover        封面图路径
+ *   detailImage  可选。详情页顶部想用另一张图（比如真实截图）时填这里，
+ *                不填则沿用 cover
  *   video        可选。有演示视频时填 src / poster / caption
  *   gallery      可选。截图数组，每项 { src, caption? }
  *   galleryNote  可选，截图区底部的一行说明
@@ -194,7 +196,8 @@ window.PROJECTS = [
     year: "2025 – 2026 第一学期",
     role: "个人项目 · 图像处理与深度学习课程大作业",
     tags: ["YOLOv5", "PyTorch", "目标检测", "LabelImg", "CUDA"],
-    cover: "assets/img/yolo-cover.jpg",
+    cover: "assets/img/yolo-detection.svg",
+    detailImage: "assets/img/yolo-cover.jpg",
     gallery: [
       { src: "assets/img/yolo/results.png", caption: "训练曲线：损失与 mAP 随轮次的变化" },
       { src: "assets/img/yolo/confusion-matrix.png", caption: "混淆矩阵：46% 的指示牌被误判为背景" },

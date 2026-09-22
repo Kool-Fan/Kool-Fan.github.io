@@ -26,7 +26,7 @@
   <rect width="1200" height="750" fill="url(#acglow2)"/>
   <rect width="1200" height="750" fill="url(#acgrid)"/>
 
-  <text x="88" y="128" font-family="ui-monospace, Consolas, monospace" font-size="42" font-weight="700" letter-spacing="6" fill="#e6edf3">PROJECT 03</text>
+  <text x="88" y="128" font-family="ui-monospace, Consolas, monospace" font-size="42" font-weight="700" letter-spacing="6" fill="#e6edf3">PROJECT 04</text>
   <text x="88" y="180" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="26" fill="#8b98a5">AI 相机 · 端侧识别 + 服务端同步</text>
 
   <!-- 手机 -->
