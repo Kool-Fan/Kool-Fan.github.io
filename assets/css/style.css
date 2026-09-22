@@ -660,6 +660,30 @@ h3 {
   justify-content: center;
 }
 
+.contact-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 22px 0 0;
+  padding: 10px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.contact-email-label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.contact-email-value {
+  font-family: var(--mono);
+  font-size: 15px;
+  color: var(--text);
+  /* 点一下就能整段选中，方便复制 */
+  user-select: all;
+}
+
 .site-footer {
   padding: 28px 0;
   background: var(--bg-alt);
