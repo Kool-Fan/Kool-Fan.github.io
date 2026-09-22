@@ -1,0 +1,89 @@
+/* 样式入口：编译成 assets/vendor/tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 以下自定义样式来自原页面里的 <style type="text/tailwindcss"> 块 */
+@layer utilities {
+  .content-auto {
+    content-visibility: auto;
+  }
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .bg-gradient-green {
+    background: linear-gradient(120deg, #2e7d32 0%, #4ecdc4 100%);
+  }
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+  .park-marker {
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 2px rgb(0 0 0 / 0.1));
+    transform: translate(-50%, -50%);
+  }
+  .park-marker:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+    filter: drop-shadow(0 4px 6px rgb(0 0 0 / 0.15));
+    z-index: 10;
+  }
+  .park-marker .marker-icon {
+    width: 18px;
+    height: 18px;
+    font-size: 8px;
+  }
+  .park-marker .marker-label {
+    font-size: 10px;
+    padding: 1px 3px;
+    margin-top: 2px;
+    min-width: max-content;
+    white-space: nowrap;
+  }
+  @media (max-width: 768px) {
+    .park-marker {
+      transform: translate(-50%, -50%) scale(0.75);
+    }
+    .park-marker:hover {
+      transform: translate(-50%, -50%) scale(0.9);
+      z-index: 10;
+    }
+    .park-marker .marker-icon {
+      width: 16px !important;
+      height: 16px !important;
+      font-size: 7px !important;
+    }
+    .park-marker .marker-label {
+      font-size: 8px !important;
+      padding: 1px 2px !important;
+      margin-top: 1px !important;
+    }
+  }
+  @media (max-width: 480px) {
+    .park-marker {
+      transform: translate(-50%, -50%) scale(0.65);
+    }
+    .park-marker:hover {
+      transform: translate(-50%, -50%) scale(0.8);
+      z-index: 10;
+    }
+    .park-marker .marker-icon {
+      width: 14px !important;
+      height: 14px !important;
+      font-size: 6px !important;
+    }
+    .park-marker .marker-label {
+      font-size: 7px !important;
+      padding: 0px 2px !important;
+      margin-top: 1px !important;
+    }
+  }
+  .map-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+  }
+}
